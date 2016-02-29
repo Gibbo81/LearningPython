@@ -23,10 +23,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="05Numeric.py">
+    <Compile Include="01To04.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="0104module1.py">
+    <Compile Include="05Numeric.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="06TheDynamicTypingInterlude.py">

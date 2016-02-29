@@ -29,11 +29,16 @@ def StringForIn():
     for x in s:
         print(x, end=' ')   #in this wai the terminator of print it's not \n but ' '
     print()
-    print("'k' in s : " +str('k' in s))
+    print("'k' in s : " +str('k' in s)) #is expression is a search
     print("'e' in s : " +str('e' in s))
     return;
 
-
+def IndexingAndSlicing():
+    print('String are definedas immutabe ordered collection of characters')
+    S= "A beautiful string"
+    print(S[0],S[5],S[-2])
+    print(S[8:15])          #Slice take from position 8 to 15 included left bound but not right one
+    return;
 
 
 Concatenation()
@@ -47,7 +52,7 @@ BlockString()
 print('------------------------------------------------------------')
 StringForIn()
 print('------------------------------------------------------------')
-
+IndexingAndSlicing()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
