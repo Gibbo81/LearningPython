@@ -23,7 +23,15 @@ def BlockString():          #""" .....      """
     '''
     return;
 
-
+def StringForIn():
+    s="Years"
+    print(s)
+    for x in s:
+        print(x, end=' ')   #in this wai the terminator of print it's not \n but ' '
+    print()
+    print("'k' in s : " +str('k' in s))
+    print("'e' in s : " +str('e' in s))
+    return;
 
 
 
@@ -37,7 +45,7 @@ print(r'c:\new\file.txt : ' +s1)
 print('------------------------------------------------------------')
 BlockString()
 print('------------------------------------------------------------')
-
+StringForIn()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')

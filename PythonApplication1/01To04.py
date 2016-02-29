@@ -74,7 +74,7 @@ def Dictionaries():
     lkey.sort()  #sort the collection
     print(lkey)
     for key in lkey:
-        print(key, '=>', dit[key])          # key, '=>', dit[key] || è una lista   
+        print(key, '=>', dit[key])          # key, '=>', dit[key] || ?na lista   
     return;
 
 def ForLoop():   # In reality it's the foreach
