@@ -15,8 +15,10 @@ def Concatenation():
 
 Concatenation()
 print('------------------------------------------------------------')
-s= r'c:\new\file.txt'
-print(s)
+s= r'c:\new\file.txt'       #raw string
+s1= 'c:\new\file.txt'
+print(r"r'c:\new\file.txt : '" +s)
+print(r'c:\new\file.txt : ' +s1)
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
