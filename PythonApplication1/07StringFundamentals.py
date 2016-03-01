@@ -38,6 +38,8 @@ def IndexingAndSlicing():
     S= "A beautiful string"
     print(S[0],S[5],S[-2])
     print(S[8:15])          #Slice take from position 8 to 15 included left bound but not right one
+    print(S[8:])
+    print(S[:5])
     return;
 
 
