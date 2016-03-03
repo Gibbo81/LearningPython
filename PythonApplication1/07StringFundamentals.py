@@ -45,10 +45,26 @@ def IndexingAndSlicing():
     print('S[::-2] : ' + str(S[::-2]))
     return;
 
+def CommonUsedMethod():
+    y='spammy'
+    print(y.replace('am',"omo"))
+    print(y.find('my'))
+    print(y.find('mym'))        #-1 if it doesn't found nothing
+
+    lis=list(y)
+    print(lis)
+    back='-'.join(lis)      #- is put between each element it will concatenate
+    print(back)
+
+    y=" bob*$john*$arthur*$li nd "
+    print(y.split('*$'))
+    print(y.strip())
+    return;
 
 Concatenation()
 print('------------------------------------------------------------')
-s= r'c:\new\file.txt'       #raw string
+print('raw string')
+s= r'c:\new\file.txt'                                       #raw string
 s1= 'c:\new\file.txt'
 print(r"r'c:\new\file.txt : '" +s)
 print(r'c:\new\file.txt : ' +s1)
@@ -59,9 +75,9 @@ StringForIn()
 print('------------------------------------------------------------')
 IndexingAndSlicing()
 print('------------------------------------------------------------')
-
+print('That is {0} {1} bird!'.format(1,"dead"))             #format method
 print('------------------------------------------------------------')
-
+CommonUsedMethod()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
