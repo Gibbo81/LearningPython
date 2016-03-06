@@ -5,8 +5,8 @@ def DictinaryBaseFormattingExpression():
     return;
 
 def StringFormattingMethod():
-    template = 'Inseriamone tre: {0}, {1}, {2}'
-    template2 = 'Inseriamone tre: {}, {}, {}'
+    template = 'Inseriamone tre: {0}, {1}, {2}'     #by position
+    template2 = 'Inseriamone tre: {}, {}, {}'       #by relative position
     print(template.format('un',"dos",'tres'))
     print(template2.format('un',"dos",'tres'))
     return;
@@ -15,16 +15,4 @@ print('------------------------------------------------------------')
 DictinaryBaseFormattingExpression()
 print('------------------------------------------------------------')
 StringFormattingMethod()
-print('------------------------------------------------------------')
 
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
