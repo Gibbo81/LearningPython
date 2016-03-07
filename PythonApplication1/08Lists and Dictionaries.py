@@ -49,9 +49,6 @@ def InPlaceChange():
     print(lis)
     return;
 
-
-
-
 BasicListOperations()
 print('------------------------------------------------------------')
 Indexing()
