@@ -61,6 +61,14 @@ def CommonUsedMethod():
     print(y.strip())
     return;
 
+def FormattingExpression():
+    print("Formatting expression")
+    print('That is {0} {1} bird!'.format(1,"dead"))     #new way sobstitution
+    print('%d %s %g you' % (1, 'spam', 4.0))            #old way sobstitution
+    print(r"%d: integer -- %g: float -- %s Convert to string (more or less everithing")
+    print('All whith \%: ' +  '%s %s %s you' % (1, 'spam', 4.0))  
+    return;
+
 Concatenation()
 print('------------------------------------------------------------')
 print('raw string')
@@ -75,7 +83,7 @@ StringForIn()
 print('------------------------------------------------------------')
 IndexingAndSlicing()
 print('------------------------------------------------------------')
-print('That is {0} {1} bird!'.format(1,"dead"))             #format method
+FormattingExpression()             #format method
 print('------------------------------------------------------------')
 CommonUsedMethod()
 print('------------------------------------------------------------')
