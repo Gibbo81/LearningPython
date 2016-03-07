@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>07StringFundamentals.py</StartupFile>
+    <StartupFile>07Bis.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -32,7 +32,13 @@
     <Compile Include="06TheDynamicTypingInterlude.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="07Bis.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="07StringFundamentals.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="08Lists and Dictionaries.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
