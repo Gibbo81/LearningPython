@@ -59,7 +59,7 @@ def ListMethod():
     print(li.count(1))    
     return;
 
-def BasicDictionaryOperator():
+def BasicDictionaryOperator():                      #key any immutable object work fine
     print("start with dictionary")
     di={'a':1,"b":2,'c':3, 4:'quattro'}
     print(di)
@@ -74,6 +74,36 @@ def BasicDictionaryOperator():
     print(list(keys))                               # if we want a list we should uselist(...) 
     print('"b" in di : ' + str("b" in di))          #check if a key with this value is present into the dictionary
     print('"y" in di : ' + str("y" in di))
+    print(list(di.values()))
+    print(list(di.items()))
+    di2=di.copy()                                   #create a different copy, if we change di2 di remanes the same
+    del di2['d']
+    print(di)
+    print(di2)
+    return;
+
+def DictionaryChangeInPlace():
+    D={'eggs':3,'spam':2,'ham':1}
+    print(D)
+    D['ham']=["grill","bake","fray"]
+    print(D)
+    del D['eggs']
+    print(D)
+    D["NEW ENTITY"]=12                          #if the key is not present we add a new entity
+    print(D)
+    return;
+
+def DictionaryExample():
+    table = {'1975': 'Holy Grail', 
+             '1979': 'Life of Brian',
+              1983 : 'The Meaning of Life'}
+    year='1979'
+    print(table[year])
+    for x in table:                             # same as => for x in table.keys():          
+        print(str(x) + " : " + str(table[x]))
+    
+    #to use the dictionary in revers order starting from the value to obtasin the key
+    print([years for (years,title) in table.items() if title=='The Meaning of Life'])
     return;
 
 BasicListOperations()
@@ -86,7 +116,16 @@ ListMethod()
 print('------------------------------------------------------------')
 BasicDictionaryOperator()
 print('------------------------------------------------------------')
+DictionaryChangeInPlace()
+print('------------------------------------------------------------')
+DictionaryExample()
+print('------------------------------------------------------------')
+
+print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
+
+print('------------------------------------------------------------')
+
