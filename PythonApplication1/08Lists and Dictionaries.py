@@ -100,10 +100,20 @@ def DictionaryExample():
     year='1979'
     print(table[year])
     for x in table:                             # same as => for x in table.keys():          
-        print(str(x) + " : " + str(table[x]))
-    
+        print(str(x) + " : " + str(table[x]))    
     #to use the dictionary in revers order starting from the value to obtasin the key
     print([years for (years,title) in table.items() if title=='The Meaning of Life'])
+    return;
+
+def Comprehension():
+    print("Comprehension for building dictionary")
+    D={k:v for (k,v) in zip(['a','b',"c"],[1,2,3])}
+    print(D)
+    D={x:x*4 for x in [0,1,2,3,5,9,100] if x%2==0}
+    print(D)
+    D={x.lower():x for x in "SPAMMER"}
+    print(D)
+
     return;
 
 BasicListOperations()
@@ -120,7 +130,7 @@ DictionaryChangeInPlace()
 print('------------------------------------------------------------')
 DictionaryExample()
 print('------------------------------------------------------------')
-
+Comprehension()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
