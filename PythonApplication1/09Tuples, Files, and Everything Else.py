@@ -11,9 +11,7 @@ def TupleMethod():
     print(t)
     print('t.count(2) :' + str(t.count(2)))
     print('t.index(2,2) :' + str(t.index(2,2)))
-
     return;
-
 
 
 
