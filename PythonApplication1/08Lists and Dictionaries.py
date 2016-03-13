@@ -101,6 +101,8 @@ def DictionaryExample():
     print(table[year])
     for x in table:                             # same as => for x in table.keys():          
         print(str(x) + " : " + str(table[x]))    
+    for key in table:                           # same as => for x in table.keys():   
+        print(table[key])    
     #to use the dictionary in revers order starting from the value to obtasin the key
     print([years for (years,title) in table.items() if title=='The Meaning of Life'])
     return;
@@ -113,8 +115,56 @@ def Comprehension():
     print(D)
     D={x.lower():x for x in "SPAMMER"}
     print(D)
-
     return;
+
+def ViewObject():
+    print("In 3.X we have not list for .keys() but view object")
+    table = {   '1975': 'Holy Grail', 
+                '1979': 'Life of Brian',
+                1983 : 'The Meaning of Life'}
+    print(type(table.keys()))                       #dict_keys is an iterable object not a list
+    print(type(table.values()))
+    print(type(table.items()))
+    print("We can cast to list using list(...)")
+    print(list(table.keys()))
+    print(list(table.values()))
+    print(list(table.items()))
+    print("this view are pointer so if the base dictionary change they reflect this change!")
+    items=table.values()
+    table[2010]="A good year"
+    for x in items:
+        print(x)
+    print('It\'s print the new one, but it vas created before :-)')
+    return;
+
+def SortingDictionary():
+    dic={'e':4,
+         'a':1,
+         'b':2,
+         'c':3,}
+    print('Dictionary order is not deterministic: ')
+    print(dic)
+    print('but we can use .sort(..) to sort its keys')
+    keylist=list(dic.keys())
+    for x in sorted(keylist,reverse=False):
+        print(dic[x])
+    #equivalent
+    keylist.sort(reverse=True)      #use compare func if given
+    for x in keylist:
+        print(dic[x])
+    return;
+
+def DictionaryIn():
+    dic={'e':4,
+         'a':1,
+         'b':2,
+         'c':3,}
+    print(dic)
+    print("'b' in dic : " + str('b' in dic))
+    print("'b' in .keys() : " + str('b' in dic.keys()))  #it's the same check
+    print("'5' in dic.values() : " + str('5' in dic.values()))
+    return;
+
 
 BasicListOperations()
 print('------------------------------------------------------------')
@@ -132,10 +182,9 @@ DictionaryExample()
 print('------------------------------------------------------------')
 Comprehension()
 print('------------------------------------------------------------')
-
+ViewObject()
 print('------------------------------------------------------------')
-
+SortingDictionary()
 print('------------------------------------------------------------')
-
+DictionaryIn()
 print('------------------------------------------------------------')
-
