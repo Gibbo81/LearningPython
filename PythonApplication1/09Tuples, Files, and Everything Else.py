@@ -13,7 +13,38 @@ def TupleMethod():
     print('t.index(2,2) :' + str(t.index(2,2)))
     return;
 
+def UsingFiles():
+    # 'r' imput, 'w' create and open, 'a' append
+    #Data read from a file always come back as a string
+    #similar when you write you need to pass an already formatted string
+    CreateAFile()
+    print('*****') 
+    ReadAFile()
 
+
+
+    return;
+
+def CreateAFile():
+    print('scrivo il file: myfile.txt') 
+    writefile=open('.\\09files\\myfile.txt',"w")          # "r" imput, "w" create and open, "a" append
+    writefile.write("hello text file\n")
+    writefile.write("goodbye text file\n")
+    writefile.close()
+    return;
+
+def ReadAFile():
+    print('leggo il file: myfile.txt') 
+    for line in open(r".\09files\myfile.txt"):     #r is the default
+        print(line,end='')
+
+    print('Read again with different command') 
+    readfile2=open(r".\09files\myfile.txt") 
+    print(readfile2.readline(),end='')
+    print(readfile2.readline(),end='')
+    print(readfile2.readline(),end='')
+    readfile2.close()
+    return;
 
 print((40))
 x=(40,)             #tu have a list of one element(useless)
@@ -23,7 +54,7 @@ TupleAreImmutable()
 print('------------------------------------------------------------')
 TupleMethod()
 print('------------------------------------------------------------')
-
+UsingFiles()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
