@@ -75,6 +75,52 @@ def SaveObjectonFile():
     filer.close()
     return;
 
+def UsingPickleToStoreObjectsInFile():
+    print("Save a binary rappresentation of a generic object using pickle library")
+    import pickle
+    dic={'a':"pluto",'b':4}
+    list=[1,2,3,8,9,10,"0000000000"]
+    file= open('.\\09files\\pikefile.pkl',"wb")
+    pickle.dump(dic,file)
+    pickle.dump(list,file)
+    file.close()
+    
+    file= open('.\\09files\\pikefile.pkl',"rb")
+    dicread=pickle.load(file)
+    listread=pickle.load(file)
+    file.close()
+    print(dicread)
+    print(listread)
+    return;
+
+def UsingJsonToStoreObjectsInFile():
+    print("Save a binary rappresentation of a generic object using Json library")
+    import json
+    dic={'a':"pluto",'b':4, 'c':45, 'aa':4353}
+    file=open('.\\09files\\Jsonfile.jas',"w")
+    json.dump(dic,file)
+    file.close()
+
+    file=open('.\\09files\\Jsonfile.jas')
+    dicr= json.load(file)
+    file.close()
+    print(dicr)
+    return;
+
+def UsingStructToSaveBinaryDataOnFile():
+    print("Save a binary rappresentation of a generic object using struct library")
+    import struct
+    int=6781223
+    file=open('.\\09files\\Jsonfile.jas',"wb")
+    file.write(struct.pack('@ih',4585, 17))        #@: native order, size & alignment (default) The remaining chars indicate types of args and must match exactly
+    file.close()
+
+    file=open('.\\09files\\Jsonfile.jas',"rb")
+    read=file.read()
+    result=struct.unpack('@ih', read)
+    print(result)
+    file.close()
+    return;
 
 
 print((40))
@@ -91,11 +137,11 @@ BinaryFiles()
 print('------------------------------------------------------------')
 SaveObjectonFile()
 print('------------------------------------------------------------')
-
+UsingPickleToStoreObjectsInFile()
 print('------------------------------------------------------------')
-
+UsingJsonToStoreObjectsInFile()
 print('------------------------------------------------------------')
-
+UsingStructToSaveBinaryDataOnFile()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
