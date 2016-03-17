@@ -122,6 +122,20 @@ def UsingStructToSaveBinaryDataOnFile():
     file.close()
     return;
 
+def FileContextManager():
+    print("Using with instead of close()")
+    with open('.\\09files\\insertobjects.txt') as myfile:   #it's the equivalent of c# using
+            for line in myfile:                             #when we exit from with il close it's automatically called
+                print(line,end='')
+    return;
+
+def IsAndEqualEqual():
+    x=[1,2,3,4,(9,8,7)]
+    y=[1,2,3,4,(9,8,7)]
+    print("x is y :" + str(x is y))  #check for object identity (reference the same object?)
+    print("x == y :" + str(x == y))  #check for object equivalence 
+    return;
+
 
 print((40))
 x=(40,)             #to have a list of one element(useless)
@@ -142,6 +156,14 @@ print('------------------------------------------------------------')
 UsingJsonToStoreObjectsInFile()
 print('------------------------------------------------------------')
 UsingStructToSaveBinaryDataOnFile()
+print('------------------------------------------------------------')
+FileContextManager()
+print('------------------------------------------------------------')
+IsAndEqualEqual()
+print('------------------------------------------------------------')
+
+print('------------------------------------------------------------')
+
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
