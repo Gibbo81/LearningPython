@@ -136,6 +136,13 @@ def IsAndEqualEqual():
     print("x == y :" + str(x == y))  #check for object equivalence 
     return;
 
+def NoneSpecialType(): 
+    lis=[None]*100  #none can be used as place older but it's also the dafault return value of a functon
+    print(lis)      #that does not have a return value as this one
+    lis[99]="fine"
+    lis[0]='inizio'
+    print(lis)
+    return;
 
 print((40))
 x=(40,)             #to have a list of one element(useless)
@@ -161,7 +168,7 @@ FileContextManager()
 print('------------------------------------------------------------')
 IsAndEqualEqual()
 print('------------------------------------------------------------')
-
+print(NoneSpecialType())    #the function NoneSpecialType() use return; so its default value is null
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
