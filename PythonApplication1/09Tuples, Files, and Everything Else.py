@@ -1,4 +1,4 @@
-def TupleAreImmutable():
+﻿def TupleAreImmutable():
     t=(1,2,3,['w','e','r','t'])
     print(t)
     #t[3]=65  This is an error ==> 'tuple' object does not support item assignment
@@ -70,7 +70,7 @@ def SaveObjectonFile():
     print(float(splitted[1]))
     splitted = filer.readline().rstrip().split('|')
     dictionary = eval(splitted[0])      #EVAL a build-in function that treat a string as a python expression
-    list = eval(splitted[1])            #it's the same of writing  list= [...]  con l'assegnamento che � fatto dal contenuto della stringa
+    list = eval(splitted[1])            #it's the same of writing  list= [...]  con l'assegnamento che è fatto dal contenuto della stringa
     print (str(list) + ' ' + str(dictionary))
     filer.close()
     return;
