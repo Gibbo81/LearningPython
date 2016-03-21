@@ -27,9 +27,6 @@ def TryAndCatch():
             print("done")
     return;
 
-
-
-
 TestingWhileLoop()
 print('------------------------------------------------------------')
 TryAndCatch()
