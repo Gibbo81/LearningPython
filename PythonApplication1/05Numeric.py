@@ -23,8 +23,9 @@ def DivisionType():
     print('25/3 :' + str(25/3))
     print('floor division // make the truncate and ignore the remainder and return the same type of the operator')
     print('25//3 :' + str(25//3))
+    print('25.2//3 :' + str(25.2//3))
     print('attention to // with negative value')
-    print('it will go to the closest number below the tru result')
+    print('it will go to the closest number below the true result')
     print('-25//3 :' + str(-25//3) + '||   -8.3333 ==> -9')   
     return;
 
