@@ -25,13 +25,22 @@ def SequenceAssignment():
         left,*seq=seq
     return;
 
+def PrintParameter(separator,eof):
+    a,b,*c,d=range(10)
+    print(a,b,c,d,sep=separator,end=eof)    #sep,end,fileflush must be passed as keyword argument end=...
+    filew = open('.\\11files\\writestring.txt',"w") 
+    print(a,b,c,d,sep=separator,end=eof,file=filew) #change aoutput stream 
+    filew.close()
+
+    return
+
 UnpackingAssignment()
 print('------------------------------------------------------------')
 PythonEnumerator()
 print('------------------------------------------------------------')
 SequenceAssignment()
 print('------------------------------------------------------------')
-
+PrintParameter(" -_- ",' FINE RIGA \n')
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
