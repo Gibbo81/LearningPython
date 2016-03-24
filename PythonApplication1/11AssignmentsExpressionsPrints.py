@@ -29,10 +29,16 @@ def PrintParameter(separator,eof):
     a,b,*c,d=range(10)
     print(a,b,c,d,sep=separator,end=eof)    #sep,end,fileflush must be passed as keyword argument end=...
     filew = open('.\\11files\\writestring.txt',"w") 
-    print(a,b,c,d,sep=separator,end=eof,file=filew) #change aoutput stream 
+    print(a,b,c,d,sep=separator,end=eof,file=filew) #change output stream 
     filew.close()
-
+    print(c,sep=separator,file=open('.\\11files\\writestringtwo.txt',"w")) 
     return
+
+def sys_stdout():
+    import sys
+    sys.stdout.write('hello world2 \n')     #print() is only a simple interace to sys.stdout
+    sys.stderr.write('bad '*8+"\n")     #to print error message to the standard error stream
+    return;
 
 UnpackingAssignment()
 print('------------------------------------------------------------')
@@ -42,7 +48,7 @@ SequenceAssignment()
 print('------------------------------------------------------------')
 PrintParameter(" -_- ",' FINE RIGA \n')
 print('------------------------------------------------------------')
-
+sys_stdout()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
