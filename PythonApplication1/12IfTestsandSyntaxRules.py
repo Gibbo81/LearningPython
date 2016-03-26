@@ -34,8 +34,13 @@ def PythonStrangeAnd_Or_pattern():
     y=({} or 3)         #Y=3 because {} is false so the or expression return the object on yhe left size of the operation
     z=('aaa' or 15)     #z='aaa' because or does not need to evaluete 15
     z2=('aaa' and 15)   #z2 instead is 15 becaouse and need also the 2° condition to be evalueted
+    return;
 
-
+def TernaryExpression(Y,Z):
+    print("Also in python it's present a ternary expression (similar to c# conditional expression)")
+    print(Y,Z)
+    X=Y if Y>Z else Z
+    print("The major number is : " + str(X))
     return;
 
 print('------------------------------------------------------------')
@@ -48,7 +53,7 @@ SpemmingMultipleLinee()
 print('------------------------------------------------------------')
 PythonStrangeAnd_Or_pattern()
 print('------------------------------------------------------------')
-
+TernaryExpression(10,6564.8)
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')

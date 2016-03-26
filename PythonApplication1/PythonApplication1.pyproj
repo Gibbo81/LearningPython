@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>12IfTestsandSyntaxRules.py</StartupFile>
+    <StartupFile>13Whileand ForLoops.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -48,6 +48,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="12IfTestsandSyntaxRules.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="13Whileand ForLoops.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
