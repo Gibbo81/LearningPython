@@ -15,6 +15,28 @@ def TestingIfSequence(value):
         print(str(value) + " its' >= 60")
     return;
 
+def SpemmingMultipleLinee():
+    a=15        #you can continue typing a statment on the next line 
+    x= (a+      #if you are coding something enclosed in (), [] or {}
+        6+
+        7+8
+        +a)
+    print(x)
+    if (a==15 and
+        x==51 and
+        x):
+        print(True)        
+    return;
+
+def PythonStrangeAnd_Or_pattern():
+    print('Boolean expression {and, or, !} always return the left or the right object')
+    print("not a simple True\False flag!!!!!")
+    y=({} or 3)         #Y=3 because {} is false so the or expression return the object on yhe left size of the operation
+    z=('aaa' or 15)     #z='aaa' because or does not need to evaluete 15
+    z2=('aaa' and 15)   #z2 instead is 15 becaouse and need also the 2° condition to be evalueted
+
+
+    return;
 
 print('------------------------------------------------------------')
 TestingIfSequence(0)
@@ -22,9 +44,9 @@ TestingIfSequence(25)
 TestingIfSequence(50)
 TestingIfSequence(159)
 print('------------------------------------------------------------')
-
+SpemmingMultipleLinee()
 print('------------------------------------------------------------')
-
+PythonStrangeAnd_Or_pattern()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
