@@ -34,6 +34,10 @@ def ReadAFile():
     print('leggo il file: myfile.txt') 
     for line in open(r".\09files\myfile.txt"):     #r is the default
         print(line,end='')
+    #it's th same of the previous command
+    print('Read again with different command') 
+    for line in open(r".\09files\myfile.txt").readlines():
+        print(line.rstrip())
     print('Read again with different command') 
     readfile2=open(r".\09files\myfile.txt") 
     print(readfile2.readline(),end='')
