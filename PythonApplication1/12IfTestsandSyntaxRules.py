@@ -33,7 +33,7 @@ def PythonStrangeAnd_Or_pattern():
     print("not a simple True\False flag!!!!!")
     y=({} or 3)         #Y=3 because {} is false so the or expression return the object on yhe left size of the operation
     z=('aaa' or 15)     #z='aaa' because or does not need to evaluete 15
-    z2=('aaa' and 15)   #z2 instead is 15 becaouse and need also the 2? condition to be evalueted
+    z2=('aaa' and 15)   #z2 instead is 15 becaouse and need also the second condition to be evalueted
     return;
 
 def TernaryExpression(Y,Z):

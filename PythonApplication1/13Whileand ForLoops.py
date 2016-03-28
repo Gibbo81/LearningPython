@@ -50,6 +50,26 @@ def ExtendedSequenceAssignment(): #in practice it makes two iteration in sequenc
         print(a,b,c)
     return;
 
+def UsingRange(start,stop, step):
+    print("using range with",start,stop, step, " : ",end=" ")
+    for x in range(start,stop,step):    #to make a loop thatr executs a fixed numerf times
+        print(x,end=" ")
+    else:
+        print("")
+    return;
+
+def AddOnetoEachListElement(list):  #range/len combination is usefull when we wont t change a list in place
+    for x in range(len(list)):
+        list[x]+=1
+    return;
+
+def UsingZipLoop(listA,listB):
+    dict={}
+    for (x,y) in zip(listA,listB):
+        print(x,y,'--',x+y)
+        dict[x]=y       #it can also be used to opulate dictinaries
+    return dict;
+
 WhileLoop("pipperi",7,13)
 print('------------------------------------------------------------')
 print(SearchListWithElseloop("abcdefg",'e'))
@@ -64,11 +84,15 @@ IteretingOverDictionary()
 print('------------------------------------------------------------')
 ExtendedSequenceAssignment()
 print('------------------------------------------------------------')
-
+UsingRange(0,12,2)
+UsingRange(7,-9,-3)
 print('------------------------------------------------------------')
-
+list=[1,2,3,9,10,-1,-3]
+print("before: ",list)
+AddOnetoEachListElement(list)
+print("after : ",list)
 print('------------------------------------------------------------')
-
+print(UsingZipLoop([1,2,3,4,5,6],[8,7,6,-2,-3,-8]))
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
