@@ -32,11 +32,11 @@ def CreateAFile():
 
 def ReadAFile():
     print('leggo il file: myfile.txt') 
-    for line in open(r".\09files\myfile.txt"):     #r is the default
-        print(line,end='')
+    for line in open(r".\09files\myfile.txt"): #r is the default
+        print(line,end='')                     #this is the only one using an iterator to read the file one line at the time
     #it's th same of the previous command
     print('Read again with different command') 
-    for line in open(r".\09files\myfile.txt").readlines():
+    for line in open(r".\09files\myfile.txt").readlines(): #take alla the file in memory :-(
         print(line.rstrip())
     print('Read again with different command') 
     readfile2=open(r".\09files\myfile.txt") 
