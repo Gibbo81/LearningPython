@@ -1,0 +1,5 @@
+In spite of progress in restricting and simplifying the structures
+of software, they remain inherently unvisualizable, thus
+depriving the mind of some of its most powerful conceptual
+tools. This lack not only impedes the process of design within
+one mind, it severely hinders communication among minds.
