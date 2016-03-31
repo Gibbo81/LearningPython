@@ -1,6 +1,6 @@
 def ManualIteration(path, list):
     print('manual iteration: f.__next__ and next(f)')
-    with open(path) as f: #a file object is its own iterator
+    with open(path) as f:   #a file object is its own iterator
         while True:
             try:
                 print(f.__next__().rstrip())    #f.__next__() and next(f) are the same in python 3.X
@@ -17,7 +17,8 @@ def ManualIteration(path, list):
     print()
     return;
 
-
+def ListComprensionFromFileRemoveeol(path):     #read all the line from a text file removing \n final
+    return [(x.rstrip(), x.rstrip().replace('a',"***" )) for x in open(path) if x.rstrip()[-1]!='s'];
 
 
 #Any object with a __next__ method to advance to a next result and which raises StopIteration at the end of 
@@ -29,7 +30,8 @@ for line in open(r".\09files\myfile.txt"):  #the file its a classic iterator
 print('------------------------------------------------------------')
 ManualIteration(r".\09files\myfile.txt",[1,2,'rty'])
 print('------------------------------------------------------------')
-
+for x in ListComprensionFromFileRemoveeol('.\\14files\\File.txt'):
+    print(x)
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
@@ -47,3 +49,7 @@ print('------------------------------------------------------------')
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
+
+
+
+
