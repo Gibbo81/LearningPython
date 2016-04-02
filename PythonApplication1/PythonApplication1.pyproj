@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>14IterationsAndComprehensions.py</StartupFile>
+    <StartupFile>15TheDocumentationInterlude.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -54,6 +54,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="14IterationsAndComprehensions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="15TheDocumentationInterlude.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

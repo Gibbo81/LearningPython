@@ -3,8 +3,7 @@ def WhileLoop(word,start,stop):
     while word:
         print(word,end=" ")
         word=word[1:]
-    else:               #run ony if the loop is exit noraly, without hitting a break block
-        print("")
+    else: print("")             # this else statment run ony if the loop is exit noraly, without hitting a break block
     print('Counting from '+ str(start) + " to " +str(stop))
     while start<=stop:
         print(start,end=" ")
