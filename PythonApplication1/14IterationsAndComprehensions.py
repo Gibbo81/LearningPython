@@ -30,7 +30,8 @@ for line in open(r".\09files\myfile.txt"):  #the file its a classic iterator
 print('------------------------------------------------------------')
 ManualIteration(r".\09files\myfile.txt",[1,2,'rty'])
 print('------------------------------------------------------------')
-for x in ListComprensionFromFileRemoveeol('.\\14files\\File.txt'):
+result=ListComprensionFromFileRemoveeol('.\\14files\\File.txt')
+for x in result:
     print(x)
 print('------------------------------------------------------------')
 
