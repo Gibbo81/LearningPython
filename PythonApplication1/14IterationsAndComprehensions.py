@@ -15,7 +15,7 @@ def ManualIteration(path, list):
         except StopIteration:
             break
     print()
-    return;
+    return
 
 def ListComprensionFromFileRemoveeol(path):     #read all the line from a text file removing \n final
     return [(x.rstrip(), x.rstrip().replace('a',"***" )) for x in open(path) if x.rstrip()[-1]!='s'];

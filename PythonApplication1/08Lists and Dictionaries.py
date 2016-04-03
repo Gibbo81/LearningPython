@@ -15,7 +15,7 @@ def BasicListOperations():
     mapper= map(abs,[1,2,3,4,-8,-9,-154])
     print(mapper)
     '''
-    return;
+    return
 
 def Indexing():
     print('Indexing')
@@ -27,11 +27,11 @@ def Indexing():
     matrix= [[1,2,3],                    #can spam multiple lines
              [4,5,6],
              [7,8,9]]
-    return;
+    return
 
 def ChangeAValue(list, index, value):
     list[index]=value
-    return;
+    return
 
 def InPlaceChange():
     print("InPlaceChange")
@@ -51,13 +51,13 @@ def InPlaceChange():
     print(lis)
     lis.insert(1,'posizione uno [1]')       # add the object in the specific position
     print(lis)
-    return;
+    return
 
 def ListMethod():
     li=[1,2,1,13,4,'appo']
     print(li.index(1))
     print(li.count(1))    
-    return;
+    return
 
 def BasicDictionaryOperator():                      #key any immutable object work fine
     print("start with dictionary")
@@ -80,7 +80,7 @@ def BasicDictionaryOperator():                      #key any immutable object wo
     del di2['d']
     print(di)
     print(di2)
-    return;
+    return
 
 def DictionaryChangeInPlace():
     D={'eggs':3,'spam':2,'ham':1}
@@ -91,7 +91,7 @@ def DictionaryChangeInPlace():
     print(D)
     D["NEW ENTITY"]=12                          #if the key is not present we add a new entity
     print(D)
-    return;
+    return
 
 def DictionaryExample():
     table = {'1975': 'Holy Grail', 
@@ -105,7 +105,7 @@ def DictionaryExample():
         print(table[key])    
     #to use the dictionary in revers order starting from the value to obtasin the key
     print([years for (years,title) in table.items() if title=='The Meaning of Life'])
-    return;
+    return
 
 def Comprehension():
     print("Comprehension for building dictionary")
@@ -115,7 +115,7 @@ def Comprehension():
     print(D)
     D={x.lower():x for x in "SPAMMER"}
     print(D)
-    return;
+    return
 
 def ViewObject():
     print("In 3.X we have not list for .keys() but view object")
@@ -135,7 +135,7 @@ def ViewObject():
     for x in items:
         print(x)
     print('It\'s print the new one, but it vas created before :-)')
-    return;
+    return
 
 def SortingDictionary():
     dic={'e':4,
@@ -152,7 +152,7 @@ def SortingDictionary():
     keylist.sort(reverse=True)      #use compare func if given
     for x in keylist:
         print(dic[x])
-    return;
+    return
 
 def DictionaryIn():
     dic={'e':4,
@@ -163,7 +163,7 @@ def DictionaryIn():
     print("'b' in dic : " + str('b' in dic))
     print("'b' in .keys() : " + str('b' in dic.keys()))  #it's the same check
     print("'5' in dic.values() : " + str('5' in dic.values()))
-    return;
+    return
 
 
 BasicListOperations()

@@ -1,7 +1,7 @@
 def printme( str ):
    "This prints a passed string into this function"
    print (str)
-   return;
+   return
 
 def StringTest():
     s='spam'
@@ -15,7 +15,7 @@ ccc"""
     print(msg)
     link=R'http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/functions.html'
     print(link)
-    return;
+    return
 
 def ListTest():
     l=[123,'spam spam',15.69]
@@ -30,7 +30,7 @@ def ListTest():
     print('nesting: ' + str(nesting))
     print('nesting[1][0]: '+ str(nesting[1][0]))
     print('nesting[0][1]: '+ str(nesting[0][1]))
-    return;
+    return
 
 def ListComprehensionExpression():
     list=[[1,3,5],[7,9,5],[77,79,75]]
@@ -53,7 +53,7 @@ def ListComprehensionExpression():
     print('next(gen): ' + str(next(gen)))
     print('next(gen): ' + str(next(gen)))
     print('next(gen): ' + str(next(gen)))
-    return;
+    return
 
 def Dictionaries():
     dit={'car':'focus','money':33,'decimal':98.357}
@@ -75,7 +75,7 @@ def Dictionaries():
     print(lkey)
     for key in lkey:
         print(key, '=>', dit[key])          # key, '=>', dit[key] || ?na lista   
-    return;
+    return
 
 def ForLoop():   # In reality it's the foreach
     print('Testing the for loop')                           
@@ -93,7 +93,7 @@ def ForLoop():   # In reality it's the foreach
     s="Happy" 
     for x in s:
         print(x)
-    return;
+    return
 
 def MixingDictionariesAndList():
     mix={'name':{'first':'Giuliano','last':'Masi'},
@@ -105,14 +105,14 @@ def MixingDictionariesAndList():
     mix['jobs'].append('airman')
     print('Added a new job')
     print(mix)
-    return;
+    return
 
 def Tuple():        #Tuple are fixed immutable list
     t=(1,2,3,4,5)
     print(t)
     t=('err',1,4,[1,5,'uttf',8],{'a':1,'b':'yyy'})
     print(t)
-    return;
+    return
 
 def Files():
     print('writing on fles')
@@ -137,14 +137,14 @@ def Files():
     for line in open('dataUTF8.txt',encoding='utf-8'):
         print('Unicode line number ' + str(counter) + ' : ' + line) 
         counter=counter+1 
-    return;
+    return
 
 def SetCollection():        #are unorder colection of unique and immutable objects
     print('Working with SET')
     set = {'h','yyy', 3, 5.8}                 #similar to dictionary but without the key
     set.add(78)
     print (set)
-    return;
+    return
 
 #define a new class:
 class Worker:

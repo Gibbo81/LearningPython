@@ -4,7 +4,7 @@ def Concatenation():
     s='a\nb\tc\th'
     print(s)
     print("len(s): " + str(len(s)))  #7: 4 characters(a,b,c,h) + newline \n + 2 tab \t
-    return;
+    return
 
 def BlockString():          #""" .....      """
     print("BlockString: ''' dall'alba al.....        tramonto'''")
@@ -21,7 +21,7 @@ def BlockString():          #""" .....      """
     print(sys.getrefcount(b))
     print(sys.getrefcount(a))
     '''
-    return;
+    return
 
 def StringForIn():
     s="Years"
@@ -31,7 +31,7 @@ def StringForIn():
     print()
     print("'k' in s : " +str('k' in s)) #is expression is a search
     print("'e' in s : " +str('e' in s))
-    return;
+    return
 
 def IndexingAndSlicing():
     print('String are definedas immutabe ordered collection of characters')
@@ -43,7 +43,7 @@ def IndexingAndSlicing():
     print(S[:5])
     print('S[::3] : ' + str(S[::3]))    #third parameter is the step, it take una char and then jump next two 
     print('S[::-2] : ' + str(S[::-2]))
-    return;
+    return
 
 def CommonUsedMethod():
     y='spammy'
@@ -59,7 +59,7 @@ def CommonUsedMethod():
     y=" bob*$john*$arthur*$li nd "
     print(y.split('*$'))
     print(y.strip())
-    return;
+    return
 
 def FormattingExpression():
     print("Formatting expression")
@@ -67,20 +67,20 @@ def FormattingExpression():
     print('%d %s %g you' % (1, 'spam', 4.0))            #old way sobstitution
     print(r"%d: integer -- %g: float -- %s Convert to string (more or less everithing")
     print('All whith \%: ' +  '%s %s %s you' % (1, 'spam', 4.0))  
-    return;
+    return
 
 def DictinaryBaseFormattingExpression():
     dict={"qty":1, "b":2,"c":3,"d":4}   
     str="prova %(qty)d inserisce - %(d)s"   
     print(str % dict )          # inserisci il valore del dizionario che ha come chiave d trattandolo con il passaggio %s (conversione a stringa)
-    return;
+    return
 
 def StringFormattingMethod():
     template = 'Inseriamone tre: {0}, {1}, {2}'     #by position
     template2 = 'Inseriamone tre: {}, {}, {}'       #by relative position
     print(template.format('un',"dos",'tres'))
     print(template2.format('un',"dos",'tres'))
-    return;
+    return
 
 
 Concatenation()

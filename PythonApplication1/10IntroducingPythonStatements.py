@@ -12,7 +12,7 @@ def TestingWhileLoop():
         else:
             print("Error " + reply + " is not a number")           
     print("bye")
-    return;
+    return
 
 def TryAndCatch():
     print("Using try/except")
@@ -25,7 +25,7 @@ def TryAndCatch():
             print("Error " + reply + " is not a number")         
         finally:
             print("done")
-    return;
+    return
 
 TestingWhileLoop()
 print('------------------------------------------------------------')

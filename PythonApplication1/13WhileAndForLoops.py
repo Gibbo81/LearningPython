@@ -10,7 +10,7 @@ def WhileLoop(word,start,stop):
         start+=1
     else:
         print("")
-    return;
+    return
 
 def SearchListWithElseloop(list,value):     #it would be better to use a for, but it's nly for test
     result="found"
@@ -28,7 +28,7 @@ def ForUsing(sequence):
         print(x,end=' ')
     else:
         print("")
-    return;
+    return
 
 def IteretingOverDictionary():
     dict={'a':1,'but':"ere", 4:"eeee"}
@@ -41,13 +41,13 @@ def IteretingOverDictionary():
     print('printing Items')
     for (x,y) in dict.items():      #we are using the tuple assignment that works also outside of for loop
         print(x,' -> ',y)
-    return;
+    return
 
 def ExtendedSequenceAssignment(): #in practice it makes two iteration in sequence in the forassignment
     seq=[(1,2,3,4),(5,6,7,8),(9,12,14,13,16,78,4443,'1a2')]
     for (a,*b,c) in seq: #it's more eror prone, if we add another item ...,'1a2'),1] we obtein the error :1 is not iterable
         print(a,b,c)
-    return;
+    return
 
 def UsingRange(start,stop, step):
     print("using range with",start,stop, step, " : ",end=" ")
@@ -55,12 +55,12 @@ def UsingRange(start,stop, step):
         print(x,end=" ")
     else:
         print("")
-    return;
+    return
 
 def AddOnetoEachListElement(list):  #range/len combination is usefull when we wont t change a list in place
     for x in range(len(list)):
         list[x]+=1
-    return;
+    return
 
 def UsingZipLoop(listA,listB):
     dict={}

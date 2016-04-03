@@ -7,12 +7,12 @@ def UnpackingAssignment():
     print(a,b)
     a,b=VariableSwitch(a,b)
     print(a,b)
-    return;
+    return
 
 def PythonEnumerator():
     a,b,c=range(3)          #equivalent to enumerator
     print(a,b,c)
-    return;
+    return
 
 def SequenceAssignment():
     seq=[1,2,3,4,5]
@@ -23,7 +23,7 @@ def SequenceAssignment():
     while seq:
         print(seq)
         left,*seq=seq
-    return;
+    return
 
 def PrintParameter(separator,eof):
     a,b,*c,d=range(10)
@@ -38,7 +38,7 @@ def sys_stdout():
     import sys
     sys.stdout.write('hello world2 \n')     #print() is only a simple interace to sys.stdout
     sys.stderr.write('bad '*8+"\n")     #to print error message to the standard error stream
-    return;
+    return
 
 UnpackingAssignment()
 print('------------------------------------------------------------')

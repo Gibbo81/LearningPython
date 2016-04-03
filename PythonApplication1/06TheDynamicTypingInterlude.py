@@ -1,6 +1,6 @@
 def ListAdd(lista):
     lista.append(3)
-    return;
+    return
 
 def IntSum(intero):
     return intero+3;
@@ -19,7 +19,7 @@ def TwoEqualityCheck():
     import sys
     print(sys.getrefcount(b))
     print(sys.getrefcount(a))
-    return;
+    return
 
 l1=[]  #list mutable
 print(l1)
