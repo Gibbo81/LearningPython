@@ -1,7 +1,7 @@
 def printme( str ):
    "This prints a passed string into this function"
    print (str)
-   return;
+   return
 
 def ChainedCoparison():
     print('ChainedCoparison')
@@ -16,7 +16,7 @@ def ChainedCoparison():
     sum=1.1+2.2
     bol= sum==3.3
     print('1.1+2.2 == 3.3 :' + str(bol))
-    return;
+    return
 
 def DivisionType():
     print('True division / return always a float number')
@@ -27,7 +27,7 @@ def DivisionType():
     print('attention to // with negative value')
     print('it will go to the closest number below the true result')
     print('-25//3 :' + str(-25//3) + '||   -8.3333 ==> -9')   
-    return;
+    return
 
 def ConversionInteger():
     print('Different base for number 64')
@@ -37,7 +37,7 @@ def ConversionInteger():
     print(d)    
     i = int(d, base=8)  #back to int rom te string
     print(i)
-    return;
+    return
 
 def BitwiseOperation():
     x=1
@@ -49,7 +49,7 @@ def BitwiseOperation():
     print('x&1 :' + str(x&1))
     len=(x<<3).bit_length()
     print(len)
-    return;
+    return
 
 def MathLibrary():
     import math         #this import work only inside the scope of this function. Outside i canno't use math.pi
@@ -58,7 +58,7 @@ def MathLibrary():
     print('random.random() :' + str(random.random()))
     print('random.randint(1,100) :' + str(random.randint(1,100)))
     print('random.choice([\'abc\',\'def\',\'hul\',\'oer\']) :' + str(random.choice(['abc','def','hul','oer'])))
-    return;
+    return
 
 def Decimal():      #floating point math is less than exact
     from decimal import Decimal
@@ -69,7 +69,7 @@ def Decimal():      #floating point math is less than exact
     float2=15.55
     res = Decimal(str(float1)) + Decimal(str(float2))
     print('Decimal(str(float1)) + Decimal(str(float2)) :' + str(res))
-    return;
+    return
 
 def WorkingWithSet():
     print('working with set')
@@ -91,14 +91,14 @@ def WorkingWithSet():
     empty=set()                 # old is used to create empty set or to convert iteable item (list....)
     fromEterabloitems=set([7,87,5,2,345,6]) #{} is still an empty dictionary
     print('set([7,87,5,2,345,6]) : ' + str(fromEterabloitems))
-    return;
+    return
 
 def SetComprehensionExpression():
     from decimal import Decimal
     print('Similar to List Comprehension Expression but create a list')
     l= {x*x for x in [1,2,5,Decimal(str(8.8)),8.8,9,8] }
     print('{x*x for x in [1,2,5,Decimal(str(8.8)),8.8,9,8]} : ' +str(l))
-    return;
+    return
 
 def Boolean():
     print('Boolean are a subclass of integer')
@@ -108,7 +108,7 @@ def Boolean():
     print('false + 10 : ' + str(False+10))
     print('isinstance(True,int) : ' + str(isinstance(True,int)))  #true is realy a int
     print('type(True) : ' + str(type(True)))
-    return;
+    return
 
 printme("WAR")
 print('Hello World')
