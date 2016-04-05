@@ -2,7 +2,7 @@ x=13    #this variable is global
 globvar = 0
 import importing.ImportVariable as ImportVariable 
 
-def GlobalVar():
+def GlobalVarPrint():
     print("global variable globvar: ", globvar)
     print("global variable x: ",x)
     return
@@ -10,10 +10,10 @@ def GlobalVar():
 def GlobalVarChange():
     global globvar  #if we declare this variable ad global the next assigment reference the global one
     globvar="globale"   #instead of working creating a new local variable that hie the global one
-    GlobalVar()
+    GlobalVarPrint()
     return
 
-def Change():
+def LocalOverride():
     x='23232'   #this is a local assignment it create a new x local variable not change the global one
     print("Changed x into: ",x)
 
@@ -23,7 +23,7 @@ def ChangeRet():
     return x    #to really change an mmutable type we need to pass it back
 
 def TestChangeGlobalVariable():
-    print('change origina value')
+    print('change original value')
     ImportVariable.PrintmyList()
     ImportVariable.lis.append("pippo")
     ImportVariable.PrintMyNumber()
@@ -32,12 +32,12 @@ def TestChangeGlobalVariable():
 
 
 print("testing the LEGB local-enclosing-global-built in")
-GlobalVar()
+GlobalVarPrint()
 print('-----------------------------------------------------------------')
 GlobalVarChange()
 print('-----------------------------------------------------------------')
 print(x)
-Change()
+LocalOverride()
 print(x)
 x=ChangeRet()  # this go on the global war
 print(x)
