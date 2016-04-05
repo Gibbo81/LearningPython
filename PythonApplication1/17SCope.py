@@ -22,14 +22,30 @@ def ChangeRet():
     print("Changed x into: ",x, ' and return it back')
     return x    #to really change an mmutable type we need to pass it back
 
-def TestChangeGlobalVariable():
-    print('change original value')
+def TestChangeExternalModuleVariables(): #We can change variable from another files 
+    print('change original value')       #but it's a bad practice
     ImportVariable.PrintmyList()
     ImportVariable.lis.append("pippo")
     ImportVariable.PrintMyNumber()
     ImportVariable.num=45
     return
 
+def CreateNewGlobalVariable():
+    print('Create 2 new global variables new1 and new2')
+    global new1
+    global new2
+    new1=int(x)+25
+    new2="lotto alle otto"
+    
+def NonLocalVariable(): #use of command nonlocal
+    nl=12               #similar to global but it's referred only to the enclosing visibility scope
+    print("nl: ", nl)
+    def Internal(u):
+        print('Change a variabale of the enclosing local scope to ',u)
+        nonlocal nl
+        nl=u
+    Internal("new value")
+    print("nl: ", nl)
 
 print("testing the LEGB local-enclosing-global-built in")
 GlobalVarPrint()
@@ -42,11 +58,20 @@ print(x)
 x=ChangeRet()  # this go on the global war
 print(x)
 print('-----------------------------------------------------------------')
-TestChangeGlobalVariable()
-print('-----------------------------------------------------------------')
-print("Both this actions had changed our variable in a global way, also the nuber that is animmutable type")
+TestChangeExternalModuleVariables()
+print("Both this actions had changed our variable in a global way, also the number that is an immutable type")
 ImportVariable.PrintmyList()
 ImportVariable.PrintMyNumber()
+print('-----------------------------------------------------------------')
+CreateNewGlobalVariable()
+print('new1: ',new1)
+print("new2: ",new2)
+print('-----------------------------------------------------------------')
+NonLocalVariable()
+print('-----------------------------------------------------------------')
+
+print('-----------------------------------------------------------------')
+
 print('-----------------------------------------------------------------')
 
 print('-----------------------------------------------------------------')
