@@ -10,7 +10,7 @@ def GlobalVarPrint():
 def GlobalVarChange():
     global globvar  #if we declare this variable ad global the next assigment reference the global one
     globvar="globale"   #instead of working creating a new local variable that hie the global one
-    GlobalVarPrint()
+    GlobalVarPrint()    #global declaration make the search begin in the global scope LEGB (start from G) 
     return
 
 def LocalOverride():
@@ -47,6 +47,11 @@ def NonLocalVariable(): #use of command nonlocal
     Internal("new value")
     print("nl: ", nl)
 
+def FunctionFactory(n=7):
+    return lambda x: x**n   # function are object and can be assigned or return as normal value
+    # action = lambda x: x**n   would be also a valid way to obtain the same result
+    # return action
+
 print("testing the LEGB local-enclosing-global-built in")
 GlobalVarPrint()
 print('-----------------------------------------------------------------')
@@ -69,7 +74,13 @@ print("new2: ",new2)
 print('-----------------------------------------------------------------')
 NonLocalVariable()
 print('-----------------------------------------------------------------')
-
+print("Using function factory")
+f1=FunctionFactory(4)
+f2=FunctionFactory(10)  #different function with with its own set of state information
+f3=FunctionFactory()
+print(f1(3))
+print(f2(3))
+print(f3(3))
 print('-----------------------------------------------------------------')
 
 print('-----------------------------------------------------------------')
