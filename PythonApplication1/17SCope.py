@@ -30,7 +30,7 @@ def TestChangeExternalModuleVariables(): #We can change variable from another fi
     ImportVariable.num=45
     return
 
-def CreateNewGlobalVariable():
+def CreateNewGlobalVariable():  #Global variable must not already be defined when we use 'global new1'
     print('Create 2 new global variables new1 and new2')
     global new1
     global new2
@@ -39,7 +39,7 @@ def CreateNewGlobalVariable():
     
 def NonLocalVariable(): #use of command nonlocal
     nl=12               #similar to global but it's referred only to the enclosing visibility scope
-    print("nl: ", nl)
+    print("nl: ", nl)   #and variable must always be already defined when we declare them as nonlocal
     def Internal(u):
         print('Change a variabale of the enclosing local scope to ',u)
         nonlocal nl
