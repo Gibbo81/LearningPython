@@ -50,14 +50,15 @@ def NonLocalVariable(): #use of command nonlocal
 def FunctionFactory(n=7):
     return lambda x: x**n   # function are object and can be assigned or return as normal value
     # action = lambda x: x**n   #would be also a valid way to obtain the same result
-    #def action(x):             #this can be a third way to do the same thing
-    #    return x**n
+    # return action
+    # def action(x):             #this can be a third way to do the same thing
+    #   return x**n
     # return action
 
 def ManteiningStateBetweenExecution(starting):
     def internalfunc(label): 
-        nonlocal starting       #in this way the functio now is with is own state
-        print(label,starting)   #starting value is keep and incremental ad each new use
+        nonlocal starting       #in this way the function now has its own state
+        print(label,starting)   #starting value is keeped and incremented ad each new use
         starting+=1             #of this function
     return internalfunc
 
@@ -67,8 +68,6 @@ def UsingFunctionAttribute(starting):   #function can have attribute associated 
         internalfunc.counter+=1
     internalfunc.counter=starting       #manually after the function definition
     return internalfunc
-
-
 
 print("testing the LEGB local-enclosing-global-built in")
 GlobalVarPrint()
@@ -115,12 +114,4 @@ f1("halo")
 f2('two')
 f1(r"halo 2:")
 f2(r'two 2:')
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
 print('-----------------------------------------------------------------')
