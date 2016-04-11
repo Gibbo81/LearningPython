@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>18Arguments.py</StartupFile>
+    <StartupFile>19AdvanceFunctionTpics.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -66,6 +66,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="18Arguments.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="19AdvanceFunctionTpics.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="importing\FuncTest.py">

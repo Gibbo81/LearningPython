@@ -33,7 +33,6 @@ def KeywordOnlyArgument(a,*b,c='default'):    #c is a keyword only must always b
 def KeywordOnlyArgument2(a,*,c='default'):  #same as before but the functio do not accept a variable-lenght argument list 
     print(c)
 
-
 print("Parameter can be match by keyword and not only by position")
 printing(b="secondo",c=' finale',a='primo')
 printing("primo",c=' finale',b="secondo")
@@ -70,14 +69,4 @@ KeywordOnlyArgument(1,2,3,4,5,c="print me") #if we use *b c=... must be at the e
 KeywordOnlyArgument(1,2,3,4,5,7,'f')
 KeywordOnlyArgument2('a')
 KeywordOnlyArgument2(c='prent me 2',a='ttt')
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
 print('-----------------------------------------------------------------')
