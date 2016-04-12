@@ -12,7 +12,7 @@ def CollectingArgumentTuple(first,*args): #all the arguments except the first we
     return args
 
 def CollectinArgumentDictionary(a,**dict):  #all the key parameter are groupped inside dict
-    for x in dict.values():                   #of course not the parameter a=......
+    for x in dict.values():                 #of course not the parameter a=......
         print(x, end=' ')
     print()                              
     return dict

@@ -41,6 +41,7 @@ def IndexingAndSlicing():
     print(S[8:15])                      #Slice take from position 8 to 15 included left bound but not right one
     print(S[8:])
     print(S[:5])
+    print(S[:0])
     print('S[::3] : ' + str(S[::3]))    #third parameter is the step, it take una char and then jump next two 
     print('S[::-2] : ' + str(S[::-2]))
     return
