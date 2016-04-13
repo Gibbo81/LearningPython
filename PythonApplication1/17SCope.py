@@ -47,7 +47,7 @@ def NonLocalVariable(): #use of command nonlocal
     Internal("new value")
     print("nl: ", nl)
 
-def FunctionFactory(n=7):
+def FunctionFactory(n=7):   #lambda is always a single expression, it cann't spam on more lines
     return lambda x: x**n   # function are object and can be assigned or return as normal value
     # action = lambda x: x**n   #would be also a valid way to obtain the same result
     # return action
