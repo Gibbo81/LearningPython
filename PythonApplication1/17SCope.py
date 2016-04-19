@@ -9,7 +9,7 @@ def GlobalVarPrint():
 
 def GlobalVarChange():
     global globvar  #if we declare this variable ad global the next assigment reference the global one
-    globvar="globale"   #instead of working creating a new local variable that hie the global one
+    globvar="globale"   #instead of creating a new local variable that hit the global one
     GlobalVarPrint()    #global declaration make the search begin in the global scope LEGB (start from G) 
     return
 
@@ -20,10 +20,10 @@ def LocalOverride():
 def ChangeRet():
     x='23232'   
     print("Changed x into: ",x, ' and return it back')
-    return x    #to really change an mmutable type we need to pass it back
+    return x    #to really change an immutable type we need to pass it back
 
 def TestChangeExternalModuleVariables(): #We can change variable from another files 
-    print('change original value')       #but it's a bad practice
+    print('change original value')       #but it's a bad practice!
     ImportVariable.PrintmyList()
     ImportVariable.lis.append("pippo")
     ImportVariable.PrintMyNumber()
@@ -34,7 +34,7 @@ def CreateNewGlobalVariable():  #Global variable must not already be defined whe
     print('Create 2 new global variables new1 and new2')
     global new1
     global new2
-    new1=int(x)+25
+    new1=int(x)+25              #here we define 2 new globalvariable for this file
     new2="lotto alle otto"
     
 def NonLocalVariable(): #use of command nonlocal

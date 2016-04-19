@@ -58,8 +58,3 @@ from functools import reduce
 print('Filter and Reduce')
 print(list(filter(lambda x: x>0, range(-5,5)))) #similar to map it return only the value that are valid (here >0)
 print(reduce(lambda x,y: x+y, (1,2,3))) #at each step reduce passes the current result along with the next result from list
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')

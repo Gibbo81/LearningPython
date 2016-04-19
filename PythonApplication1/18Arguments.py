@@ -27,8 +27,11 @@ def Tracer(func,*tupl,**dict):
     print('Calling ',func.__name__)
     return func(*tupl,**dict)
 
+def KeywordOnlyArgument3(a,*b,c):    #c is a keyword only must always be pass using (...,c=...)
+    print(c)  
+
 def KeywordOnlyArgument(a,*b,c='default'):    #c is a keyword only must always be pass using (...,c=...)
-    print(c)
+    print(c)                                  #unless of course we ut a default value  
 
 def KeywordOnlyArgument2(a,*,c='default'):  #same as before but the functio do not accept a variable-lenght argument list 
     print(c)
@@ -67,6 +70,8 @@ print('-----------------------------------------------------------------')
 print('Using Keyword Only Argument')
 KeywordOnlyArgument(1,2,3,4,5,c="print me") #if we use *b c=... must be at the end
 KeywordOnlyArgument(1,2,3,4,5,7,'f')
+KeywordOnlyArgument3(1,2,3,4,5,7,'f',c='pippo')
+#KeywordOnlyArgument3(1,2,3,4,5,7,'f')      #this give error because c is not present
 KeywordOnlyArgument2('a')
 KeywordOnlyArgument2(c='prent me 2',a='ttt')
 print('-----------------------------------------------------------------')
