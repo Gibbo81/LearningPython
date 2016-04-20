@@ -1,12 +1,12 @@
 def ThreeWays():
     string='spam'
     res=[]
-    for x in string:
+    for x in string:                #for
         res.append(ord(x))
     print(res)
-    res = list(map(ord,string))
+    res = list(map(ord,string))     #map eduction
     print(res)
-    res=[ord(x) for x in string]
+    res=[ord(x) for x in string]    #list comprehension
     print(res)
 
 def FilterAndExpression():
@@ -23,6 +23,25 @@ def MultipleSorceData():
              for y in [100,200,300]]
     print(res)
 
+def DoublweForStatment():     #work with matrix
+    matrix=[[1,2,3],
+            [4,5,6],
+            [7,8,9]]
+    print('Matrix: ',matrix)
+    print("we will add 10 to each element")
+    matrix=[[x+10 for x in row] for row in matrix]
+    print('Matrix: ',matrix)
+    matrix=[[1,2,3],
+            [4,5,6],
+            [7,8,9]]
+    print('Matrix: ',matrix)
+    print("we will add 10 to each element and linearize the matrix")
+    matrix=[x+10 for row in matrix for x in row]   #double for statmnet 
+    print('A single list Matrix: ',matrix)
+
+
+
+
 print('-----------------------------------------------------------------')
 print("Now we have 3 ways to apply an expression to all items inside an iterable")
 print('for cicle, map function and list Comprehension')
@@ -32,9 +51,9 @@ FilterAndExpression()
 print('-----------------------------------------------------------------')
 MultipleSorceData()
 print('-----------------------------------------------------------------')
-
+print(list(range(10)))
 print('-----------------------------------------------------------------')
-
+DoublweForStatment()
 print('-----------------------------------------------------------------')
 
 print('-----------------------------------------------------------------')
