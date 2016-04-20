@@ -22,6 +22,8 @@ def SearchListWithElseloop(list,value):     #it would be better to use a for, bu
         result="not found"
     return result;
 
+#for works on a iterator (foreach), if we want to use a more c style for we can write: 
+#'for x in range(10)' --> x from 0 to 9
 def ForUsing(sequence):
     print("Printing sequence ",sequence)
     for x in sequence:
@@ -69,6 +71,8 @@ def UsingZipLoop(listA,listB):
         dict[x]=y       #it can also be used to opulate dictinaries
     return dict;
 
+print("for works on a iterator, if we want to use a more c style for we can write: 'for x in range(10)' x from 0 to 9")
+print('------------------------------------------------------------')
 WhileLoop("pipperi",7,13)
 print('------------------------------------------------------------')
 print(SearchListWithElseloop("abcdefg",'e'))
