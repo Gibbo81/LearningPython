@@ -1,3 +1,5 @@
+import random
+
 def ThreeWays():
     string='spam'
     res=[]
@@ -13,7 +15,7 @@ def FilterAndExpression():
     print('With list Comprehension [x**2 for x in range(10) if x%2==0]')
     result=[x**2 for x in range(10) if x%2==0]
     print(result)
-    print('With ma+ and filter: list(map(lambda x: x**2, filter(lambda x: x%2==0, range(10))))')
+    print('With map and filter: list(map(lambda x: x**2, filter(lambda x: x%2==0, range(10))))')
     result=list(map(lambda x: x**2, filter(lambda x: x%2==0, range(10))))
     print(result)
 
@@ -39,8 +41,17 @@ def DoublweForStatment():     #work with matrix
     matrix=[x+10 for row in matrix for x in row]   #double for statmnet 
     print('A single list Matrix: ',matrix)
 
+def GeneratorFunction(k):   #it returns an iteretor non all the set of result
+    for x in range(k):      #when yield is hit it return a single result and then sto the funtion
+        yield x             #il will start again when asked for a new result
 
-
+def GeneratorFunctionWithReturn():
+    while True:
+        k=random.randint(1,100)
+        if k%5==0:
+            yield k
+            return          #return stopped the generation of new value and exit definitively from the function
+        yield k
 
 print('-----------------------------------------------------------------')
 print("Now we have 3 ways to apply an expression to all items inside an iterable")
@@ -55,7 +66,14 @@ print(list(range(10)))
 print('-----------------------------------------------------------------')
 DoublweForStatment()
 print('-----------------------------------------------------------------')
-
+print('Generator function: return an iterator instead of a set of result')
+result=GeneratorFunction(10)
+print(result)       #the function return a generator object
+for rs in result:   #if we use them they are genereted only when needed(just in time)
+    print(rs)
+print('print number untill a multiple of 5 show up')
+for rs in GeneratorFunctionWithReturn():
+    print(rs)
 print('-----------------------------------------------------------------')
 
 print('-----------------------------------------------------------------')
