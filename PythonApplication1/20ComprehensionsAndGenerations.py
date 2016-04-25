@@ -46,14 +46,14 @@ def GeneratorFunction(k):   #Returns an iteretor non all the set of result
         yield x             #it will start again when asked for a new result
 
 def YieldFrom(k):
-    yield from range(k) #-->for i in range(k): yield i it's the same
+    yield from range(k)     #-->for i in range(k): yield i      it's the same
 
 def GeneratorFunctionWithReturn():
     while True:
         k=random.randint(1,100)
         if k%5==0:
             yield k
-            return      #return stopped the generation of new value and exit definitively from the function
+            return     #return stopped the generation of new value and exit definitively from the function
         yield k
 
 def YieldSend():
@@ -87,11 +87,10 @@ def permute2(seq):  #using generation function we do not havceto wait for all th
 			for x in permute1(rest): 
 			    yield seq[i:i+1] + x 
 
-def SetandDictionaryComprehension(n):
+def SetAndDictionaryComprehension(n):
     set={x*x for x in range(n)}
     dictionary={x : x*x for x in range(n)}
     return set,dictionary
-
 
 print('-----------------------------------------------------------------')
 print("Now we have 3 ways to apply an expression to all items inside an iterable")
@@ -140,7 +139,7 @@ for x in permute2([11,22,33,44,55,77]):
     print(x, end=' *** ')
 print('-----------------------------------------------------------------')
 print('We can also use dictionary and set comprehension')
-r1,r2=SetandDictionaryComprehension(5)
+r1,r2=SetAndDictionaryComprehension(5)
 print(r1)
 print(r2)
 print('-----------------------------------------------------------------')
