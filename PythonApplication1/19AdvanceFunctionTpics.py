@@ -1,16 +1,16 @@
 from tkinter import Button, mainloop
 
 def RecursivSum(l):
-    print(l)    #remeber an empty object is always False
+    print(l)                                        #remeber an empty object is always False
     return 0 if not l else l[0]+RecursivSum(l[1:])  #conditional expression in python
 
 def sumtree(L):
     tot = 0
-    for x in L: # For each item at this level
+    for x in L:                     # For each item at this level
         if not isinstance(x, list):
-            tot += x # Add numbers directly
+            tot += x                # Add numbers directly
         else:
-            tot += sumtree(x) # Recur for sublists
+            tot += sumtree(x)       # Recur for sublists
     return tot
 
 def AddAttribute():

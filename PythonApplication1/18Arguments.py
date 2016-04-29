@@ -2,10 +2,12 @@ def printing(a,b,c): print(a,b,c)
 
 def DefaultPrinting(a,b='second default',c="third default"): print(a,b,c)
 
+#ATTENZIONE ATTENZIONE ATTENZIONE ATTENZIONE ATTENZIONE ATTENZIONE ATTENZIONE ATTENZIONE
 def MutableDefault(a,b=[]): #ATTENTION!!!!!!! it reuses always the same istance of default []
     b.append(a)             #b IS NOT RESET on successive call
     print(b)                #do not use mutable default variable!!!!!!!!!
-    #ci sta se uno pensa al def come ad un'assegnamento che quando viene eseguito salva anche i parametri di default
+                            #default argument values are evalueted and saved once when a def statment is run 
+                            #not each time the resultig function is called 
 
 def CollectingArgumentTuple(first,*args): #all the arguments except the first went into the tuple
     print(args)
