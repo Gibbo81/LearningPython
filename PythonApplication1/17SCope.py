@@ -8,7 +8,7 @@ def GlobalVarPrint():
     return
 
 def GlobalVarChange():
-    global globvar  #if we declare this variable ad global the next assigment reference the global one
+    global globvar      #if we declare this variable ad global the next assigment reference the global one
     globvar="globale"   #instead of creating a new local variable that hit the global one
     GlobalVarPrint()    #global declaration make the search begin in the global scope LEGB (start from G) 
     return
@@ -47,8 +47,8 @@ def NonLocalVariable(): #use of command nonlocal
     Internal("new value")
     print("nl: ", nl)
 
-def FunctionFactory(n=7):   #lambda is always a single expression, it cann't spam on more lines
-    return lambda x: x**n   # function are object and can be assigned or return as normal value
+def FunctionFactory(n=7):       #lambda is always a single expression, it cann't spam on more lines
+    return lambda x: x**n       # function are object and can be assigned or return as normal value
     # action = lambda x: x**n   #would be also a valid way to obtain the same result
     # return action
     # def action(x):             #this can be a third way to do the same thing
