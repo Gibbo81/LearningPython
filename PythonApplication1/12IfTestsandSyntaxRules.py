@@ -14,7 +14,7 @@ def TestingIfSequence(value):
     else:
         print(str(value) + " its' >= 60")
     return
-
+#
 def SpemmingMultipleLinee():
     a=15        #you can continue typing a statment on the next line 
     x= (a+      #if you are coding something enclosed in (), [] or {}
