@@ -27,7 +27,7 @@ def StringForIn():
     s="Years"
     print(s)
     for x in s:
-        print(x, end=' ')   #in this wai the terminator of print it's not \n but ' '
+        print(x, end=' ')   #in this way the terminator of print it's not \n but ' '
     print()
     print("'k' in s : " +str('k' in s)) #is expression is a search
     print("'e' in s : " +str('e' in s))

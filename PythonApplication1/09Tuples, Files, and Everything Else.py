@@ -98,7 +98,7 @@ def UsingPickleToStoreObjectsInFile():
     return
 
 def UsingJsonToStoreObjectsInFile():
-    print("Save a binary rappresentation of a generic object using Json library")
+    print("Save a rappresentation of a generic object using Json library")
     import json
     dic={'a':"pluto",'b':4, 'c':45, 'aa':4353}
     file=open('.\\09files\\Jsonfile.jas',"w")
