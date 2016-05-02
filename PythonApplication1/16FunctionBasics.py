@@ -1,9 +1,9 @@
-import importing.FuncTest as FuncTest   #in this way i can iport the file and also set a good name
+import importing.FuncTest as FuncTest   #in this way i can import the file and also set a good name
 
 
 FuncTest.PrintValue("print this variable")
 print('-----------------------------------------------------------------')
-#creatng a function it's only an assignmente to a variable done a runtime of a function object
+#creating a function it's only an assignmente to a variable done a runtime of a function object
 #the name of a functin it's not different and is assigned a runtime whene we execute def statement
 #we can assignment a function to any different variable a run time
 variable= FuncTest.PrintValue

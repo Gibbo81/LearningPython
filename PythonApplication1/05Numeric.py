@@ -95,7 +95,7 @@ def WorkingWithSet():
 
 def SetComprehensionExpression():
     from decimal import Decimal
-    print('Similar to List Comprehension Expression but create a list')
+    print('Similar to List Comprehension Expression but create a set')
     l= {x*x for x in [1,2,5,Decimal(str(8.8)),8.8,9,8] }
     print('{x*x for x in [1,2,5,Decimal(str(8.8)),8.8,9,8]} : ' +str(l))
     return
