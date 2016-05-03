@@ -1,6 +1,6 @@
 x=13    #this variable is global
 globvar = 0
-import importing.ImportVariable as ImportVariable 
+import importing.ImportVariable as ImportVar 
 
 def GlobalVarPrint():
     print("global variable globvar: ", globvar)
@@ -24,10 +24,10 @@ def ChangeRet():
 
 def TestChangeExternalModuleVariables(): #We can change variable from another files 
     print('change original value')       #but it's a bad practice!
-    ImportVariable.PrintmyList()
-    ImportVariable.lis.append("pippo")
-    ImportVariable.PrintMyNumber()
-    ImportVariable.num=45
+    ImportVar.PrintmyList()
+    ImportVar.lis.append("pippo")
+    ImportVar.PrintMyNumber()
+    ImportVar.num=45
     return
 
 def CreateNewGlobalVariable():  #Global variable must not already be defined when we use 'global new1'
@@ -82,8 +82,8 @@ print(x)
 print('-----------------------------------------------------------------')
 TestChangeExternalModuleVariables()
 print("Both this actions had changed our variable in a global way, also the number that is an immutable type")
-ImportVariable.PrintmyList()
-ImportVariable.PrintMyNumber()
+ImportVar.PrintmyList()
+ImportVar.PrintMyNumber()
 print('-----------------------------------------------------------------')
 CreateNewGlobalVariable()
 print('new1: ',new1)
