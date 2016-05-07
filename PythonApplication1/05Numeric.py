@@ -1,3 +1,5 @@
+from weakref import *       #Import all the attributes inside the module weakref
+
 def printme( str ):
    "This prints a passed string into this function"
    print (str)
