@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>22ModulesTheBigPicture.py</StartupFile>
+    <StartupFile>23ModuleCodingBasics.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -80,10 +80,16 @@
     <Compile Include="22ModulesTheBigPicture.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="23ModuleCodingBasics.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="importing\FuncTest.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="importing\ImportVariable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="importing\PrintOnImport.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
