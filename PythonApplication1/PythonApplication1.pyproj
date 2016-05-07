@@ -83,6 +83,9 @@
     <Compile Include="23ModuleCodingBasics.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="importing\Changer.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="importing\FuncTest.py">
       <SubType>Code</SubType>
     </Compile>
