@@ -1,3 +1,9 @@
+#to test relative import we cann'ot do it on main .py
+from .PrintOnImport import Pippo as pip
+from . import Changer
+print('relative import here {out of the main} is workin')
+pip()
+
 def PrintValue(value):
     print(value)
     return
@@ -15,8 +21,6 @@ def Intersect(a,b):
 def NoneReturning():
     print("this functon does nothing and return default")
     return
-
-
 
 
 
