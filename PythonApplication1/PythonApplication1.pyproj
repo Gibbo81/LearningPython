@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>23ModuleCodingBasics.py</StartupFile>
+    <StartupFile>24ModulePackage.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -81,6 +81,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="23ModuleCodingBasics.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="24ModulePackage.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="importing\Changer.py">
