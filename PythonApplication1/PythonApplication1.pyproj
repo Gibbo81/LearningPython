@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>27ClassCodingBasics.py</StartupFile>
+    <StartupFile>person.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -97,6 +97,9 @@
     <Compile Include="27ClassCodingBasics.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="28AMoreRealisticExample.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="importing\Changer.py">
       <SubType>Code</SubType>
     </Compile>
@@ -107,6 +110,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="importing\PrintOnImport.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="person.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
