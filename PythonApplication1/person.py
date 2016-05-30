@@ -19,8 +19,12 @@ class Person:
         return self.__repr__()
 
 class Manager(Person):
+    def __init__(self, name, pay = 0):
+        Person.__init__(self, name, 'Boss', pay)
+        #super().__init__(name, 'Boss', pay)  #It's the samre with super but we do not chhose wich super class call
+
     def PayRaise(self,x,ManagerBonus=1.1):      #we can call the implemantation of the base class ANY BASE CLASS!!! 
-        Person.PayRaise(self,x*ManagerBonus)    #A class’s method can always be called either through
+        Person.PayRaise(self, x*ManagerBonus)   #A class’s method can always be called either through
                                                 #an instance or through the class (where you must pass 
                                                 #theinstance manually).
     def __repr__(self):
@@ -28,10 +32,6 @@ class Manager(Person):
 
     def __str__(self):
         return self.__repr__()
-
-    def __init__(self, name, pay = 0):
-        Person.__init__(self,name, 'Boss', pay)
-        #super().__init__(name, 'Boss', pay)  #It's the samre with super but we do not chhose wich super class call
 
 if __name__=='__main__':
     bob = Person('Bob Dil')
@@ -52,7 +52,6 @@ if __name__=='__main__':
     print('Print all')
     for obj in (bob,susan,boss):    #polymorphism is used witout nothing that explicity aggregate different class
         print(obj)                  #in c# we would need at last a common interface
-
     print('********************************************')
 
     print('********************************************')
