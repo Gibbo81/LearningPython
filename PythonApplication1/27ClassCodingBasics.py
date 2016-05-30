@@ -77,11 +77,3 @@ print("List of __dict__ of the second istance: ", list(u2.__dict__.keys()))
 #distinct namespace!!!!!
 #It's the same of global variable, in reading i go up to the three but in writing i create a new local vaiable!!!!
 print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
-
-print('-----------------------------------------------------------------')
