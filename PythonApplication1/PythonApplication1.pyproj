@@ -100,6 +100,7 @@
     <Compile Include="28AMoreRealisticExample.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="files28\person.py" />
     <Compile Include="importing\Changer.py">
       <SubType>Code</SubType>
     </Compile>
@@ -112,12 +113,15 @@
     <Compile Include="importing\PrintOnImport.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="person.py">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="files28\" />
     <Folder Include="importing\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="files28\newshelvefile.bak" />
+    <Content Include="files28\newshelvefile.dat" />
+    <Content Include="files28\newshelvefile.dir" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
