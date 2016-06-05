@@ -13,7 +13,7 @@ class Person:
         return self.name.split()[1]
 
     def __repr__(self):
-        return "My name is %s and I work as %s" % (self.name, self.job)
+        return "My name is %s and I work as %s for %s" % (self.name, self.job, self.pay)
 
     def __str__(self):
         return self.__repr__()
@@ -57,4 +57,3 @@ if __name__=='__main__':
     print('********************************************')
 
     print('********************************************')
-
