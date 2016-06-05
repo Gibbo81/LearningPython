@@ -104,6 +104,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="files28\person.py" />
+    <Compile Include="files29\specialize.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="importing\Changer.py">
       <SubType>Code</SubType>
     </Compile>
@@ -120,6 +123,7 @@
   <ItemGroup>
     <Folder Include="files28\" />
     <Folder Include="importing\" />
+    <Folder Include="files29\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="files28\newshelvefile.bak" />
