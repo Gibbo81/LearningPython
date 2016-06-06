@@ -26,7 +26,7 @@ class Provider(Super): # Fill in a required method
         print('in Provider.action')
 
 if __name__ == '__main__':
-    for klass in (Inheritor, Replacer, Extender):
+    for klass in (Inheritor, Replacer, Extender):       #Here we do not create the istance!
         print('\n' + klass.__name__ + '...')
         klass().method()
         print('\nProvider...')
