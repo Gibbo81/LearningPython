@@ -65,7 +65,8 @@ print('class TestDataPosition defined parameter: ',[name for name in TestDataPos
 print("List of __dict__ of the first istance: ", list(u1.__dict__.keys()))
 print("List of __dict__ of the second istance: ", list(u2.__dict__.keys()))
 u1.globale="new global"
-print("i have changed the global value for the first istance u1.globale")
+print("With u1.globale='new global' I have not changed the global value but defined a new attribute for istance u1")
+TestDataPosition.globale="to change all"    #to change the global one i need to do this!
 print("List of __dict__ of the first istance: ", list(u1.__dict__.keys()))
 print("List of __dict__ of the second istance: ", list(u2.__dict__.keys()))
 #The main point to take away from this look under the hood is that Python’s class model
