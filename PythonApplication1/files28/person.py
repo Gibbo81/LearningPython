@@ -53,7 +53,3 @@ if __name__=='__main__':
     for obj in (bob,susan,boss):    #polymorphism is used witout nothing that explicity aggregate different class
         print(obj)                  #in c# we would need at last a common interface
     print('********************************************')
-
-    print('********************************************')
-
-    print('********************************************')

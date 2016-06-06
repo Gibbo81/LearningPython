@@ -49,11 +49,6 @@ rw["Goofy"]=goofy
 rw.close()
 ReadFromShelve(".\\files28\\newshelvefile")
 print('********************************************')
-    
-print('--------------------------------------------')
-
-print('********************************************')
-
 
 '''
 To minimize the chances of name collisions like this, Python programmers often prefix
