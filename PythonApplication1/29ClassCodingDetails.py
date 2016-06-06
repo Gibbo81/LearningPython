@@ -27,6 +27,20 @@ class AbstractClass():      #Abstract class expects part of its behavor to be im
 class ConcreteDerivate(AbstractClass):
     def work(self):
         print("this is the concrete implementation!")
+
+g=1
+def nester():
+    g=2
+    class Inside:
+        g=3
+        print(g);           #3
+        def nested(self):
+            print(g)    #2! The lookup rules for simple names like X never search enclosing class
+                        #statements—just defs, modules, and built-ins (it’s the LEGB rule, not CLEGB!).
+            print(self.g)   #3 To read 3 i have to use self.g
+    Inside().nested()   
+
+
          
 print('--------------------------------------------------------------')
 x1=NextClass()
@@ -44,7 +58,9 @@ x=ConcreteDerivate()
 x.work();
 #AbstractClass().work() this would give a run time error
 print('**************************************************************')
-    
+print('Testing particular scope work')
+nester()
+
 print('--------------------------------------------------------------')
 
 print('**************************************************************')
