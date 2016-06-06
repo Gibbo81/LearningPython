@@ -18,7 +18,16 @@ class TextMulti__init__():
         self.a=valA
         print('Second costructor')
 
-    
+class AbstractClass():      #Abstract class expects part of its behavor to be implemented
+    def delegate(self):     #inside a derivate class
+        self.work()
+    def work(self):
+        raise NotImplementedError('Action must be defined in a subclass')
+        #it's possible to use metadata to tell python that a class is abstract and that can not be istanciated
+class ConcreteDerivate(AbstractClass):
+    def work(self):
+        print("this is the concrete implementation!")
+         
 print('--------------------------------------------------------------')
 x1=NextClass()
 x1.printer('APPO')
@@ -30,7 +39,10 @@ T=TextMulti__init__('p')
 #T2=TextMulti__init__('p','z')      this will give back an error
 
 print('--------------------------------------------------------------')
-
+print('ABSTRACT CLASS')
+x=ConcreteDerivate()
+x.work();
+#AbstractClass().work() this would give a run time error
 print('**************************************************************')
     
 print('--------------------------------------------------------------')
