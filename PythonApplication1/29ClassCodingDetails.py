@@ -14,7 +14,7 @@ class TextMulti__init__():
         self.b=valB
         print('First costructor')
 
-    def __init__(self, valA):           #this 2° constructor will hide the first one no xostructor overload
+    def __init__(self, valA):           #this 2° constructor will hide the first one no costructor overload
         self.a=valA
         print('Second costructor')
 
@@ -60,9 +60,10 @@ x.work();
 print('**************************************************************')
 print('Testing particular scope work')
 nester()
-
 print('--------------------------------------------------------------')
-
+x.added=10
+print("dir(x) :",dir(x))                                #see also attributes taken from the class
+print("x.__dict__.keys(): ",list(x.__dict__.keys()))    #see only istance attribute
 print('**************************************************************')
     
 print('--------------------------------------------------------------')
