@@ -12,14 +12,24 @@ class Number:
     def __str__(self):
         return self.__repr__()
 
-
-
+class Ind:
+    l=[1,2,3,4,5]
+    def __getitem__(self, index):
+        return self.l[index]
+    def __setitem__(self, index, value):
+        self.l[3]=value
 
 print('**************************************************************')
 x=Number(5)
 y=x-10
 print(y)    
 print('--------------------------------------------------------------')
+print("__getitem__ method is called automatically for instance-indexing operations READING")
+x=Ind()
+print(x[3])
+print("__setitem__ method is called automatically for instance-indexing operations SETTING")
+x[3]='989'
+print(x[3])
 
 print('**************************************************************')
     
