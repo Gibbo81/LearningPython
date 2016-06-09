@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>29ClassCodingDetails.py</StartupFile>
+    <StartupFile>30OperationOverloading.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -101,6 +101,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="29ClassCodingDetails.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="30OperationOverloading.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="files28\person.py" />
