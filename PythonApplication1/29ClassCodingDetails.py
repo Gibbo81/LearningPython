@@ -35,9 +35,9 @@ def nester():
         g=3
         print(g);           #3
         def nested(self):
-            print(g)    #2! The lookup rules for simple names like X never search enclosing class
-                        #statements—just defs, modules, and built-ins (it’s the LEGB rule, not CLEGB!).
-            print(self.g)   #3 To read 3 i have to use self.g
+            print(g)        #2! The lookup rules for simple names like X never search enclosing class
+                            #statements—just defs, modules, and built-ins (it’s the LEGB rule, not CLEGB!).
+            print(self.g)   #3 To read 3 i have to use self.g. Self is never explicit!!!!!
     Inside().nested()   
 
 
@@ -64,12 +64,3 @@ print('--------------------------------------------------------------')
 x.added=10
 print("dir(x) :",dir(x))                                #see also attributes taken from the class
 print("x.__dict__.keys(): ",list(x.__dict__.keys()))    #see only istance attribute
-print('**************************************************************')
-    
-print('--------------------------------------------------------------')
-
-print('**************************************************************')
-    
-print('--------------------------------------------------------------')
-
-print('**************************************************************')
