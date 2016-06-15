@@ -49,7 +49,7 @@ class SqaresMultiIteratorWithClass:
             self.list.append(x)
 
     def __iter__(self):                         
-        return SquareIterator(self.list)
+        return SquareIterator(self.list)        #external class as iterator
 
 class SquareIterator:
     def __init__(self, list):
@@ -63,6 +63,23 @@ class SquareIterator:
         offset = self.offset
         self.offset += 3    ##to change a little :-)
         return result, offset
+
+class Contains:
+    def __init__(self,list):
+        self.list = list
+    def __contains__(self,x):       #to enable in command
+        return x in self.list
+    def __repr__(self):
+        return str(self.list)
+
+class GenericAttr:
+    def __init__(self):
+        self.x = 39
+    def __getattr__(self, attrname):
+        if attrname == 'value':
+            self.x+=1
+            return self.x
+        raise AttributeError('The attribute %s not allowed' % attrname)
 
 print('**************************************************************')
 x=Number(5)
@@ -104,6 +121,24 @@ print('Same as before but using an external classes as iterator')
 h=SqaresMultiIteratorWithClass(1,10)
 for x,y in h:
     print('Square of offset %s has value %s' % (y,x))
+print('--------------------------------------------------------------')
+u=Contains([1,2,3,4,56,7,8,9])
+print('u:',u) 
+print("4  in u: ",4  in u)
+print('99 in u: ',99 in u)
+print('**************************************************************')
+ga = GenericAttr()
+print(ga.value)
+print(ga.value)
+try:        
+    print(ga.valuenotpresent)
+except Exception as e:
+    print(e)
+    print("Error valuenotpresent is not a recognized field")         
+print('--------------------------------------------------------------')
+
+print('**************************************************************')
+    
 print('--------------------------------------------------------------')
 
 print('**************************************************************')
