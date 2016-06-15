@@ -1,0 +1,13 @@
+syntax: glob
+bin/**
+packages/**
+obj/**
+publish_svc/**
+*.user
+*.suo
+
+**/packages/*
+**/bin/*
+**/obj/*
+
+.vs/*
