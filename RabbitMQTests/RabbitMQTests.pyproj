@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d3d349bc-2583-4fae-bf5a-f050965bc5ae</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Exercise01\send.py</StartupFile>
+    <StartupFile>Exercise01\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Exercise01\main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exercise01\receiver.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Exercise01\send.py">
       <SubType>Code</SubType>
     </Compile>
