@@ -78,7 +78,7 @@ def permute1(seq):
 			    res.append(seq[i:i+1] + x) 
 		return res
 
-def permute2(seq):  #using generation function we do not havceto wait for all the data to 
+def permute2(seq):  #using generator function we do not have to wait for all the data to 
 	if not seq:     #be calculated. We give back the result while we get it
 		yield [seq] 
 	else:
