@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d3d349bc-2583-4fae-bf5a-f050965bc5ae</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>RabbitMQTests.py</StartupFile>
+    <StartupFile>Exercise01\send.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Exercise01\send.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RabbitMQTests.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exercise01\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
