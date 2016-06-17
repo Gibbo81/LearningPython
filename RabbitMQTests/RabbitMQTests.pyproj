@@ -31,10 +31,15 @@
     <Compile Include="Exercise01\send.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exercise02\send.py" />
+    <Compile Include="Exercise02\worker.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RabbitMQTests.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exercise01\" />
+    <Folder Include="Exercise02\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
