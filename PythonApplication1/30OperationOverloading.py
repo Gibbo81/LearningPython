@@ -8,8 +8,9 @@ class Number:
     def __repr__(self):
         return "The value of this number is %s" % (self.value)
 
-    def __str__(self):
-        return self.__repr__()
+    __str__=__repr__    #alias, cut out themiddleman
+    #def __str__(self):
+    #    return self.__repr__()
 
 class Ind:
     l=[1,2,3,4,5]
@@ -81,6 +82,25 @@ class GenericAttr:
             return self.x
         raise AttributeError('The attribute %s not allowed' % attrname)
 
+class Wallet():
+    def __init__(self, money):
+        self.money=money
+    def __str__(self):  #is tried first for the print operation and the str built-in function  It generally should return a user-friendly display
+        return 'This Wallet contain %s dollar' % self.money
+    def __repr__(self): #It should generally return an as-code string that could be used to re-create the object
+        return "{money : %s}" % self.money
+
+class Adder():
+    def __init__(self, value):
+        self.value=value
+    def __add__(self, value):
+        if isinstance(value,Adder):     #to check the correct use of this + implementation
+            return Adder(self.value + value.value)
+        raise AttributeError
+    __radd__ = __add__       #cut out the middleman. __radd__ --> x+Adder(10)
+    def __repr__(self): 
+        return "{Value : %s}" % self.value
+
 print('**************************************************************')
 x=Number(5)
 y=x-10
@@ -136,11 +156,15 @@ except Exception as e:
     print(e)
     print("Error valuenotpresent is not a recognized field")         
 print('--------------------------------------------------------------')
-
+y=Wallet(798)
+print(y)
+print(y.__repr__())
 print('**************************************************************')
-    
+a= Adder(15)
+b= Adder(86)
+print (a+b)
 print('--------------------------------------------------------------')
 
 print('**************************************************************')
-    
+
 print('--------------------------------------------------------------')
