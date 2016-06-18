@@ -101,6 +101,12 @@ class Adder():
     def __repr__(self): 
         return "{Value : %s}" % self.value
 
+class Calling():
+    def __init__(self, value):
+        self.multi=value
+    def __call__(self, par):    #a class can be used as a function with __call__
+        return self.multi*par   #it allows us to code object that conform to a particulare signature
+
 print('**************************************************************')
 x=Number(5)
 y=x-10
@@ -163,6 +169,15 @@ print('**************************************************************')
 a= Adder(15)
 b= Adder(86)
 print (a+b)
+print('--------------------------------------------------------------')
+print("Using class as function")
+print("Calling(10)(5): ",Calling(10)(5))
+print('**************************************************************')
+
+print('--------------------------------------------------------------')
+
+print('**************************************************************')
+
 print('--------------------------------------------------------------')
 
 print('**************************************************************')
