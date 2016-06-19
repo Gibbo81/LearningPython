@@ -2,7 +2,7 @@ def BasicListOperations():
     print('BasicListOperations')
     li=["a",'b']
     li.append([1,4,8])
-    print(li+['z'])                     # +
+    print(li+['z'])                     # + similar to append!!!!
     print(li*3)                         # *
     bool='a' in li                      # in
     print(bool)

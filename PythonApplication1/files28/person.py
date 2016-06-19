@@ -15,8 +15,9 @@ class Person:
     def __repr__(self):
         return "My name is %s and I work as %s for %s" % (self.name, self.job, self.pay)
 
-    def __str__(self):
-        return self.__repr__()
+    __str__=__repr__    #alias, cut out themiddleman
+    #def __str__(self):
+    #    return self.__repr__()
 
 class Manager(Person):
     def __init__(self, name, pay = 0):
