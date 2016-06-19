@@ -197,11 +197,3 @@ print('calling the garbage colector')
 p=HowTODestruct("martin")
 p=12    #now the old istance of p (HowTODestruct) can be taken by the garbage collector
 print('**************************************************************')
-
-print('--------------------------------------------------------------')
-
-print('**************************************************************')
-
-print('--------------------------------------------------------------')
-
-
