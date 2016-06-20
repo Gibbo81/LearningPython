@@ -6,28 +6,16 @@ def CallBack(ch, method, properties, body):
     time.sleep(body.decode('UTF-8').count('.'))        #its the same body.count(b'.')
     print('Completed work on message %s' % body.decode('UTF-8')) 
 
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
-channel = connection.channel()
-print("Connection Created")
+def CreateConsumer(name):
+    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    channel = connection.channel()
+    print("Connection Created")
 
-channel.queue_declare(queue='task_queue')
-channel.basic_consume(CallBack,queue='task_queue',no_ack=True)
+    channel.queue_declare(queue='task_queue')
+    channel.basic_consume(CallBack,queue='task_queue',no_ack=True)
 
-print("Starting consuming messages")
-channel.start_consuming()
+    print("Starting consuming messages by %s" % name)
+    channel.start_consuming()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+    CreateConsumer('Main')

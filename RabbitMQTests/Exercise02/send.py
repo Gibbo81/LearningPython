@@ -19,9 +19,9 @@ def SendVariableComplexityMessage(difficulty):
                                    body = message,
                                    properties = pika.BasicProperties(delivery_mode=2)) # make message persistent
     if result:
-        print('task_queue')
+        print('Send message %s on task_queue' % message)
     else:
         print("Error")
 
 if __name__ == '__main__':
-    SendVariableComplexityMessage(14)
+    SendVariableComplexityMessage(4)

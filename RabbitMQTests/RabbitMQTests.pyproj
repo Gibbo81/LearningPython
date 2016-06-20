@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d3d349bc-2583-4fae-bf5a-f050965bc5ae</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Exercise01\main.py</StartupFile>
+    <StartupFile>Exercise02\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Exercise01\send.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exercise02\main.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Exercise02\send.py" />
