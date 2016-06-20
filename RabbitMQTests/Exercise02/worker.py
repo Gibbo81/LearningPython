@@ -12,7 +12,9 @@ def CreateConsumer(name):
     channel = connection.channel()
     print("Connection Created")
 
-    channel.queue_declare(queue='task_queue')
+    channel.queue_declare(queue='task_queue', durable=True)
+
+    channel.basic_qos(prefetch_count=1)                 #take only one message at the time
     channel.basic_consume(CallBack,queue='task_queue')
 
     print("Starting consuming messages by %s" % name)
