@@ -4,7 +4,7 @@ connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
 print("Connection Created")
 
-channel.queue_declare(queue='task_queue')
+channel.queue_declare(queue='task_queue', durable=True)
 
 def BuildMessage(difficulty):
     message=''
