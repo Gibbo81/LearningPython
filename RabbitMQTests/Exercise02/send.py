@@ -24,4 +24,4 @@ def SendVariableComplexityMessage(difficulty):
         print("Error")
 
 if __name__ == '__main__':
-    SendVariableComplexityMessage(4)
+    SendVariableComplexityMessage(14)
