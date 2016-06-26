@@ -1,6 +1,6 @@
-if __name__ == '__main__':  #it take the relative position from the master!!!!!! in this case 31DesigningWithClasses.py
+if __name__ == '__main__':  
     import Processor as p
-else:
+else:           #it take the relative position from the master!!!!!! in this case 31DesigningWithClasses.py
     import files31.Processor as p 
 import sys
 #to avoid this problem it will be batter to have a directory for all the file to do not have problem

@@ -11,4 +11,3 @@ publish_svc/**
 **/obj/*
 
 .vs/*
-__pycache__/**
