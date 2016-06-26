@@ -1,5 +1,3 @@
-
-
 class Processor():
     def __init__(self, reader, writer):
         self.reader = reader
