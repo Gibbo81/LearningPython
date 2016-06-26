@@ -3,7 +3,7 @@ import sys
 
 class BeautifulWriter():
     def write(self, data):
-        print("A beautifl writer ",data,end='')
+        print("A beautifl writer: ",data,end='')
 
 class Wrapper():
     def __init__(self,object):
@@ -31,6 +31,21 @@ class FinalMangling(ManglingWork, ManglingWorkBis):
     def __init__(self, x1, x2):
         ManglingWork.__init__(self, x1)
         ManglingWorkBis.__init__(self, x2)
+
+class Without():
+    def Selfless(a, b):         #self is not necessary in 3.X we can omit it 
+        return a+b
+
+def factory(aClass, *pargs, **kargs):
+    return aClass(*pargs, **kargs)
+
+class Spam():
+    def doit(self, message):
+        print(message)
+class Person:
+    def __init__(self, name, job=None):
+        self.name = name
+        self.job = job
 
 print('------------------------------------------------------------')
 worker = UC.UpperCase(open('.\\files31\\Righe.txt',"r"), sys.stdout)
@@ -66,11 +81,25 @@ print('How Mangling works with inheritance: we will have 2 .x !!!!!!')
 mf= FinalMangling(32, "xtwo")
 print(mf.__dict__)
 print('------------------------------------------------------------')
-
+print("Bound method object")
+istance = BeautifulWriter()
+object = istance.write          #we can fetch a boun method without actuallly calling it
+print(object)
+object("messaggio\n")
+print("Inbound method object")
+object = BeautifulWriter.write  #imbound method to use it we still needa istance
+print(object)
+object(istance, "messaggio\n")
 print('------------------------------------------------------------')
-
+w = Without()
+print(Without.Selfless(24,69))
+#print(w.Selfless(10,58))    #Selfless() takes 2 positional arguments but 3 were given. Self is automaticaly passed :-)
 print('------------------------------------------------------------')
-
+print('Using a factory')
+objs=factory(Spam)
+objp1= factory(Person, 'Nick','Driver')
+objp2= factory(Person, 'Merlin')
+print(objs, objp1, objp2)
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
