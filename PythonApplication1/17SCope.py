@@ -69,6 +69,16 @@ def UsingFunctionAttribute(starting):   #function can have attribute associated 
     internalfunc.counter=starting       #manually after the function definition
     return internalfunc
 
+def selector():     #this function will give back an error!!!!
+	print(X)        # Does not yet exist!
+	X = 88          # X classified as a local name (everywhere)
+'''
+While compiling, Python sees the assignment to X and decides that X will be a local name
+everywhere in the function. But when the function is actually run, because the assignment
+hasn’t yet happened when the print executes, Python says you’re using an undefined
+name.
+'''
+
 print("testing the LEGB local-enclosing-global-built in")
 GlobalVarPrint()
 print('-----------------------------------------------------------------')

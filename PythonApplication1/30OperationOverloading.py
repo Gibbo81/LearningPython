@@ -101,11 +101,23 @@ class Adder():
     def __repr__(self): 
         return "{Value : %s}" % self.value
 
-class Calling():
+class Calling():                
     def __init__(self, value):
         self.multi=value
     def __call__(self, par):    #a class can be used as a function with __call__
         return self.multi*par   #it allows us to code object that conform to a particulare signature
+
+class IsBool(): #If this method is missing, Python falls back on length because a nonempty object is considered true 
+    def __init__(self, value):
+        self.b = value
+    def __bool__(self): return self.b
+
+class HowTODestruct():
+    def __init__(self, name):
+        self.name = name
+        print("%s is born" % self.name)
+    def __del__(self):          #destructor called by the garbage collector
+        print('byby %s' % self.name)
 
 print('**************************************************************')
 x=Number(5)
@@ -173,13 +185,15 @@ print('--------------------------------------------------------------')
 print("Using class as function")
 print("Calling(10)(5): ",Calling(10)(5))
 print('**************************************************************')
-
+print('Testing he boolean value of an object')
+t=IsBool(True)     
+f=IsBool(False)    
+if t:
+    print("t is true")
+if f:
+    print("f is true")
 print('--------------------------------------------------------------')
-
+print('calling the garbage colector')
+p=HowTODestruct("martin")
+p=12    #now the old istance of p (HowTODestruct) can be taken by the garbage collector
 print('**************************************************************')
-
-print('--------------------------------------------------------------')
-
-print('**************************************************************')
-
-print('--------------------------------------------------------------')
