@@ -42,10 +42,26 @@ def factory(aClass, *pargs, **kargs):
 class Spam():
     def doit(self, message):
         print(message)
-class Person:
+class Person():
     def __init__(self, name, job=None):
         self.name = name
         self.job = job
+
+class ReadAllIstanceAttribute():
+    def ReadIstanceAttribute(self):
+        return list(self.__dict__.items())
+    def __str__(self):
+        return ("This are all the attibutes of a %s: %s" % (self.__class__.__name__, 
+                                                            self.ReadIstanceAttribute()))
+
+class Man(ReadAllIstanceAttribute):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+
+
 
 print('------------------------------------------------------------')
 worker = UC.UpperCase(open('.\\files31\\Righe.txt',"r"), sys.stdout)
@@ -100,6 +116,17 @@ objs=factory(Spam)
 objp1= factory(Person, 'Nick','Driver')
 objp2= factory(Person, 'Merlin')
 print(objs, objp1, objp2)
+print('------------------------------------------------------------')
+print("Working with mix-in: multi inheritance")
+m= Man("Mario", 45)
+print(m)
+
+print('------------------------------------------------------------')
+
+print('------------------------------------------------------------')
+
+print('------------------------------------------------------------')
+
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
