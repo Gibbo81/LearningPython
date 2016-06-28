@@ -38,6 +38,9 @@
     <Compile Include="Exercise02\worker.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exercise03\Receiver1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Exercise03\send.py" />
     <Compile Include="RabbitMQTests.py" />
   </ItemGroup>
