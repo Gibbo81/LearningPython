@@ -42,12 +42,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Exercise03\send.py" />
+    <Compile Include="Exercise04\send.py" />
     <Compile Include="RabbitMQTests.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exercise01\" />
     <Folder Include="Exercise02\" />
     <Folder Include="Exercise03\" />
+    <Folder Include="Exercise04\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
