@@ -42,6 +42,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Exercise03\send.py" />
+    <Compile Include="Exercise04\Receiver2.py" />
+    <Compile Include="Exercise04\Receiver1.py" />
     <Compile Include="Exercise04\send.py" />
     <Compile Include="RabbitMQTests.py" />
   </ItemGroup>

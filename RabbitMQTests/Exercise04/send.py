@@ -8,15 +8,15 @@ exchangename='Tutorial_4'
 channel.exchange_declare(exchange = exchangename, type = 'direct', durable = True)   #fanout -->broadcasts all the messages to all the queues it knows
 print("Exchange %s Created" % exchangename)
 
-def BuildMessage(maxmaxDifficulty):
+def BuildMessage(maxmaxDifficulty, routingKey):
     import random
-    message=str(random.randint(1,1010))
+    message=str(random.randint(1,1010)) + routingKey
     for x in range(0,maxmaxDifficulty):
         message += '.'
     return message
 
 def SendVariableComplexityMessage(maxmaxDifficulty, routingKey):   
-    message = BuildMessage(maxmaxDifficulty)
+    message = BuildMessage(maxmaxDifficulty, routingKey)
     result = channel.basic_publish(exchange = exchangename,
                                    routing_key = routingKey,
                                    body = message,
