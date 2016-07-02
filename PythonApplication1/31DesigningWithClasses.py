@@ -3,26 +3,26 @@ import sys
 
 class BeautifulWriter():
     def write(self, data):
-        print("A beautifl writer: ",data,end='')
+        print("A beautifl writer: ", data, end='')
 
 class Wrapper():
     def __init__(self,object):
         self.wrapped=object
     def __getattr__(self, name):
-        return getattr(self.wrapped,name)
+        return getattr(self.wrapped, name)
 
 '''
 within a class statement only, any names that start with two underscores but don't end with two 
 underscores are automatically expanded to include the name of the enclosing class at their front
 '''
-class ManglingWork():
+class ManglingWork():       #pseudo private attribute!
     def __init__(self, value):
         self.__x = value    ##__X is changed into _classname__x --> _ManglingWork__x
     def __iyi(self):
         print('Mangling work also with method')
 
 class ManglingWorkBis():
-    def __init__(self,value):
+    def __init__(self, value):
         self.__x = value    
     def __iyi(self):
         print('Mangling work also with method')
@@ -80,9 +80,6 @@ class Man(ReadAllIstanceAttribute,ReadAllAttribute, p):
     def ManWalk(self):
         print("Man walking")
 
-
-
-
 print('------------------------------------------------------------')
 worker = UC.UpperCase(open('.\\files31\\Righe.txt',"r"), sys.stdout)
 worker.process()
@@ -118,12 +115,21 @@ mf= FinalMangling(32, "xtwo")
 print(mf.__dict__)
 print('------------------------------------------------------------')
 print("Bound method object")
+"""
+Accessing a function attribute of a class by qualifying an instance returns a bound method object. 
+Python automatically packages the instance with the function in the bound method object, so you 
+don't need to pass an instance to call the method.
+"""
 istance = BeautifulWriter()
-object = istance.write          #we can fetch a boun method without actuallly calling it
+object = istance.write          #we can fetch a bound method without actuallly calling it
 print(object)
 object("messaggio\n")
-print("Inbound method object")
-object = BeautifulWriter.write  #imbound method to use it we still needa istance
+print("Unbound method object")
+'''
+Accessing a function attribute of a class by qualifying the class returns an unbound method object. 
+To call the method, you must provide an instance object explicitly as the first argument.
+'''
+object = BeautifulWriter.write  #unbound method to use it we still need an istance
 print(object)
 object(istance, "messaggio\n")
 print('------------------------------------------------------------')
@@ -141,14 +147,4 @@ print("Working with mix-in: multi inheritance")
 m= Man("Mario", 45)
 print(m)
 m.Print()
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
-print('------------------------------------------------------------')
-
 print('------------------------------------------------------------')
