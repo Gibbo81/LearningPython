@@ -49,16 +49,36 @@ class Person():
 
 class ReadAllIstanceAttribute():
     def ReadIstanceAttribute(self):
-        return list(self.__dict__.items())
+        return list(self.__dict__.items())   #this will find only the attribute of the istance
     def __str__(self):
         return ("This are all the attibutes of a %s: %s" % (self.__class__.__name__, 
                                                             self.ReadIstanceAttribute()))
 
-class Man(ReadAllIstanceAttribute):
+class ReadAllAttribute():
+    def ReadAttribute(self):
+        return list(dir(self))              #we can read all the attribu include that of class and inheritance
+    def Print(self):
+        result=''
+        for x in self.ReadAttribute():
+            if x[:2]!='__':
+                result += "%s : %s\n" % (x, getattr(self,x)) 
+        print("Full attribute list: %s " % result)
+
+class p():
+    def __init__(self):
+        self.nina = 'nina'
+
+    def PWalk(self):
+        print("P walking")
+
+class Man(ReadAllIstanceAttribute,ReadAllAttribute, p):
     def __init__(self, name, age):
+        p.__init__(self)
         self.name = name
         self.age = age
-
+    
+    def ManWalk(self):
+        print("Man walking")
 
 
 
@@ -120,7 +140,7 @@ print('------------------------------------------------------------')
 print("Working with mix-in: multi inheritance")
 m= Man("Mario", 45)
 print(m)
-
+m.Print()
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
