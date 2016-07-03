@@ -1,4 +1,4 @@
-x=13    #this variable is global
+ï»¿x=13    #this variable is global
 globvar = 0
 import importing.ImportVariable as ImportVar 
 
@@ -75,7 +75,7 @@ def selector():     #this function will give back an error!!!!
 '''
 While compiling, Python sees the assignment to X and decides that X will be a local name
 everywhere in the function. But when the function is actually run, because the assignment
-hasn’t yet happened when the print executes, Python says you’re using an undefined
+hasnâ€™t yet happened when the print executes, Python says youâ€™re using an undefined
 name.
 '''
 
