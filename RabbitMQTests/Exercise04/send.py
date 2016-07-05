@@ -34,4 +34,5 @@ if __name__ == '__main__':
     SendVariableComplexityMessage(8,"Red")
     SendVariableComplexityMessage(9,"Blue")
     SendVariableComplexityMessage(10,"Green")
+    connection.close()
 

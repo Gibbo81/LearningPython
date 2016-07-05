@@ -25,3 +25,4 @@ def SendVariableComplexityMessage(difficulty):
 
 if __name__ == '__main__':
     SendVariableComplexityMessage(4)
+    connection.close()
