@@ -45,6 +45,7 @@
     <Compile Include="Exercise04\Receiver2.py" />
     <Compile Include="Exercise04\Receiver1.py" />
     <Compile Include="Exercise04\send.py" />
+    <Compile Include="Exercise05Topics\send.py" />
     <Compile Include="RabbitMQTests.py" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,7 @@
     <Folder Include="Exercise02\" />
     <Folder Include="Exercise03\" />
     <Folder Include="Exercise04\" />
+    <Folder Include="Exercise05Topics\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
