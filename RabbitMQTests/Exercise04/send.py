@@ -5,7 +5,7 @@ channel = connection.channel()
 print("Connection Created")
 
 exchangename='Tutorial_4'
-channel.exchange_declare(exchange = exchangename, type = 'direct', durable = True)   #fanout -->broadcasts all the messages to all the queues it knows
+channel.exchange_declare(exchange = exchangename, type = 'direct', durable = True)   #fanout --> binding key exactly match
 print("Exchange %s Created" % exchangename)
 
 def BuildMessage(maxmaxDifficulty, routingKey):
