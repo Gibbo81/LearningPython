@@ -27,6 +27,18 @@ class SlotAndDict():
 #!!!!!It's the presence of __dict__ that enable us to add dinamically new attribute to the class!!!!!!
 
 
+class properties():         #Using properties
+    def __init__(self):
+        self.agep=40
+
+    def getage(self):
+        print("Getting age")
+        return self.agep
+    def setage(self, value):
+        print("Setting age, new value %s" % value)
+        self.agep = value
+    age = property(getage, setage, None, None)
+
 print('------------------------------------------------------------')
 a= SearchingTest(10)
 #a.__add__= lambda x: self.Data + x     #this is not working 
@@ -61,7 +73,11 @@ print("sad.__dict__: ",sad.__dict__)
 print("To see all the attribute")
 print("[x for x in dir(sad) if not x.startswith('__')]: " , [x for x in dir(sad) if not x.startswith('__')])
 print('------------------------------------------------------------')
-
+print("Working with properties")
+p = properties()
+print(p.age)
+p.age = 65
+print(p.age)
 print('------------------------------------------------------------')
 
 print('------------------------------------------------------------')
