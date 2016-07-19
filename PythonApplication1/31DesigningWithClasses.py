@@ -4,6 +4,8 @@ import sys
 class BeautifulWriter():
     def write(self, data):
         print("A beautifl writer: ", data, end='')
+    def writeselfless(data):
+        print("A beautifl selfless writer: %s" % data, end='')
 
 class Wrapper():
     def __init__(self,object):
@@ -132,6 +134,12 @@ To call the method, you must provide an instance object explicitly as the first 
 object = BeautifulWriter.write  #unbound method to use it we still need an istance
 print(object)
 object(istance, "messaggio\n")
+'''
+If the function do not require a self istance def writeselfless(data):
+we can call it without passing an istance {NO SELF}
+'''
+objectselfless = BeautifulWriter.writeselfless
+objectselfless("messaggio\n")
 print('------------------------------------------------------------')
 w = Without()
 print(Without.Selfless(24,69))

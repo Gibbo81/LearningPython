@@ -26,7 +26,6 @@ class SlotAndDict():
         self.A = y
 #!!!!!It's the presence of __dict__ that enable us to add dinamically new attribute to the class!!!!!!
 
-
 class properties():         #Using properties
     def __init__(self):
         self.agep=40
@@ -39,22 +38,38 @@ class properties():         #Using properties
         self.agep = value
     age = property(getage, setage, None, None)
 
-print('------------------------------------------------------------')
+class spam:
+    istancecount=0
+    def __init__(self):
+        spam.istancecount = spam.istancecount + 1
+    def PrintIstanceNumber():                   #simil static method
+        print("Number of istance created %s" % spam.istancecount)
+    
+    def PrintIstanceNumberStatic():             #really static method
+        print("static method ____ Number of istance created %s" % spam.istancecount)
+    PrintIstanceNumberStatic = staticmethod(PrintIstanceNumberStatic)
+
+    def PrintIstanceNumberClass(cls):           #class method
+        print("class method ___ Number of istance created %s" % spam.istancecount)
+        print(cls)
+    PrintIstanceNumberClass = classmethod(PrintIstanceNumberClass)
+
+print('---------------------------------------------------------------------')
 a= SearchingTest(10)
 #a.__add__= lambda x: self.Data + x     #this is not working 
                                         #we are searching for __add__ inside the class not the istance!!!
 b= a+12
 print(b.Data)
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 print('Diamond Inheritance tree')
 x = C()
 print(x.attr)                               #the new search pattern MRO{method resolution order} is: x C A B base
 print("The value is taken from B class")    #the old one (2.X) would be x C A Base B
 print("Class c new search pattern for diamond --> C.__mro__: ", C.__mro__)
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 #For nondiamonds, though, the search is still as it has always been to the top, and then to the right
 print("Class c1 OLD search pattern (NO diamond) --> C1.__mro__: ", C1.__mro__)
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 print("Working with __slot__")
 print('It"s possible to force a clas to only have a subset of attribute by defining them into __slot__')
 u1 = Slot()
@@ -72,36 +87,51 @@ sad.fuffa = 76
 print("sad.__dict__: ",sad.__dict__)
 print("To see all the attribute")
 print("[x for x in dir(sad) if not x.startswith('__')]: " , [x for x in dir(sad) if not x.startswith('__')])
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 print("Working with properties")
 p = properties()
 print(p.age)
 p.age = 65
 print(p.age)
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
+print('Static method')
+x = spam()
+x = spam()
+x = spam()
+x = spam()
+x = spam()
+spam.PrintIstanceNumber()
+#x.PrintIstanceNumber()     #this give back an error because x is automatically passed as first argument of the method
+spam.PrintIstanceNumberStatic()
+spam.PrintIstanceNumberClass()
+print('This method will work both with direct caling or by calling using an istance!!!!')
+print('x.PrintIstanceNumberStatic():', end=' ')
+x.PrintIstanceNumberStatic()
+print('x.PrintIstanceNumberClass():', end=' ')
+x.PrintIstanceNumberClass()
 
-print('------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
 
-print('------------------------------------------------------------')
+print('---------------------------------------------------------------------')
+
