@@ -12,7 +12,7 @@ class Fibonacci():
 
     def on_response(self, ch, method, properties, body):
         if self.corr_id == properties.correlation_id:
-            self.body = body
+            self.response = body.decode('UTF-8')    #body
         
     def RPCCall(self, n):
         self.response = None
@@ -34,8 +34,8 @@ class Fibonacci():
             
 if __name__ == '__main__':
     fibonacciRPC =  Fibonacci()
-    print("reques fib 30")
-    response = fibonacciRPC.RPCCall(30)
+    print("reques fib 3")
+    response = fibonacciRPC.RPCCall(3)
     print('Answer is %s' % response)
 
 
