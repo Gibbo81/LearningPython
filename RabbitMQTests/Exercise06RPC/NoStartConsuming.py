@@ -22,3 +22,5 @@ if __name__ == '__main__':
     print("completed elaboration of %s messages" % count)
     channel.close()
     connection.close()
+
+    
