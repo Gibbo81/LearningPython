@@ -29,7 +29,7 @@ class Fibonacci():
         should go. The queue name needs to be specified in the routing_key parameter:
         '''            
         while self.response is None:
-            self.connection.process_data_events()
+            self.connection.process_data_events()   #Non fa lo start consuming!!!!!
         return int(self.response)
             
 if __name__ == '__main__':
