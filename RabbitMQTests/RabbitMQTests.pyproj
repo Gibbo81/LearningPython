@@ -57,7 +57,6 @@
     <Compile Include="Exercise06RPC\Server.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RabbitMQTests.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exercise01\" />

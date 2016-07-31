@@ -14,7 +14,7 @@ class A1(Base): pass
 class B1: pass
 class C1(A1,B1): pass
 
-class Slot: #It"s possible to force a clas to only have a subset of attribute by defining them into __slot__
+class Slot: #It"s possible to force a class to only have a subset of attribute by defining them into __slot__
     __slots__ = ['age','name','secondname','job']   #class level attribute
 
 #We can still accommodate extra attributes, though, by including __dict__ explicitly in
@@ -38,21 +38,52 @@ class properties():         #Using properties
         self.agep = value
     age = property(getage, setage, None, None)
 
+#Static/class methods
 class spam:
     istancecount=0
     def __init__(self):
         spam.istancecount = spam.istancecount + 1
-    def PrintIstanceNumber():                   #simil static method
+    def PrintIstanceNumber():                   #simil static method {no seld}
         print("Number of istance created %s" % spam.istancecount)
     
     def PrintIstanceNumberStatic():             #really static method
         print("static method ____ Number of istance created %s" % spam.istancecount)
     PrintIstanceNumberStatic = staticmethod(PrintIstanceNumberStatic)
 
-    def PrintIstanceNumberClass(cls):           #class method
-        print("class method ___ Number of istance created %s" % spam.istancecount)
+    def PrintIstanceNumberClass(cls):           #class method get the class not the istance
+        print("class method ___ Number of istance created %s" % cls.istancecount)
         print(cls)
     PrintIstanceNumberClass = classmethod(PrintIstanceNumberClass)
+
+#Same as before but with the use of decoration
+class spamwithdecoration:
+    numinstance = 0
+    
+    def __init__(self):
+        spamwithdecoration.numinstance = spamwithdecoration.numinstance + 1
+        self.name = "I am number : %s " % spamwithdecoration.numinstance
+
+    @staticmethod
+    def PrintIstanceNumberStatic():             
+        print("static method ____ Number of istance created %s" % spamwithdecoration.numinstance)
+
+    @classmethod
+    def PrintIstanceNumberClass(cls):        
+        print("class method ___ Number of istance created %s" % cls.numinstance)
+
+    @property
+    def Name(self):
+        return self.name
+
+#user define decorator
+def countdecorator(aclass):
+    aclass.count = 1
+    return aclass
+
+@countdecorator
+class Persona:
+    def __init__(self, name):
+        self.name = name
 
 print('---------------------------------------------------------------------')
 a= SearchingTest(10)
@@ -109,11 +140,20 @@ print('x.PrintIstanceNumberStatic():', end=' ')
 x.PrintIstanceNumberStatic()
 print('x.PrintIstanceNumberClass():', end=' ')
 x.PrintIstanceNumberClass()
-
-
 print('---------------------------------------------------------------------')
+print("Use of decorator @xxxxx")
+for x in range(10):
+    spamwithdecoration()
 
+spamwithdecoration.PrintIstanceNumberClass()
+spamwithdecoration.PrintIstanceNumberStatic()
+
+i=spamwithdecoration()
+print('call to property Name:', i.Name)
 print('---------------------------------------------------------------------')
+print("Class decorator")
+p= Persona("mario")
+print(p.count)  #taken from the class decorator countdecorator !
 
 print('---------------------------------------------------------------------')
 
