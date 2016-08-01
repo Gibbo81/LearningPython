@@ -22,7 +22,9 @@ class Person:
 class Manager(Person):
     def __init__(self, name, pay = 0):
         Person.__init__(self, name, 'Boss', pay)
-        #super().__init__(name, 'Boss', pay)  #It's the samre with super but we do not chose wich super class call
+        #super().__init__(name, 'Boss', pay)  #It's the same with super but we do not chose wich super class call
+        #It's better not to use it (use explicit base class call) because it can create or hide some serious problem
+        #when we will introduce multiple inheritance
 
     def PayRaise(self,x,ManagerBonus=1.1):      #we can call the implemantation of the base class ANY BASE CLASS!!! 
         Person.PayRaise(self, x*ManagerBonus)   #A class’s method can always be called either through
