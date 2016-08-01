@@ -1,9 +1,9 @@
-import pika
+﻿import pika
 
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
 print("Connection Created")
-channel.queue_declare(queue = 'rpc_queue')
+channel.queue_declare(queue = 'rpc_queue', durable=True)
 print("Created queue rpc_queue")
 
 def fib(n):
@@ -26,11 +26,6 @@ def on_request(ch, method, properties, body):
                           body=str(result))
 
     ch.basic_ack(delivery_tag = method.delivery_tag) 
-
-
-
-
-
 
 if __name__ == '__main__':
     channel.basic_qos(prefetch_count=1)

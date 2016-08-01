@@ -54,6 +54,9 @@
     <Compile Include="Exercise06RPC\Client.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exercise06RPC\NoStartConsuming.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Exercise06RPC\Server.py">
       <SubType>Code</SubType>
     </Compile>

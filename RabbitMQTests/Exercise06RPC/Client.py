@@ -12,7 +12,7 @@ class Fibonacci():
 
     def on_response(self, ch, method, properties, body):
         if self.corr_id == properties.correlation_id:
-            self.body = body
+            self.response = body.decode('UTF-8')    #body
         
     def RPCCall(self, n):
         self.response = None
@@ -29,13 +29,13 @@ class Fibonacci():
         should go. The queue name needs to be specified in the routing_key parameter:
         '''            
         while self.response is None:
-            self.connection.process_data_events()
+            self.connection.process_data_events()   #Non fa lo start consuming!!!!!
         return int(self.response)
             
 if __name__ == '__main__':
     fibonacciRPC =  Fibonacci()
-    print("reques fib 30")
-    response = fibonacciRPC.RPCCall(30)
+    print("reques fib 3")
+    response = fibonacciRPC.RPCCall(3)
     print('Answer is %s' % response)
 
 
