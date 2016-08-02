@@ -85,6 +85,13 @@ class Persona:
     def __init__(self, name):
         self.name = name
 
+class e1:
+    def m(self): print("e1.m")
+class e2:
+    def m(self): print("e2.m")
+class soon(e1):
+    def m(self): super().m()
+
 print('---------------------------------------------------------------------')
 a= SearchingTest(10)
 #a.__add__= lambda x: self.Data + x     #this is not working 
@@ -154,9 +161,13 @@ print('---------------------------------------------------------------------')
 print("Class decorator")
 p= Persona("mario")
 print(p.count)  #taken from the class decorator countdecorator !
-
 print('---------------------------------------------------------------------')
-
+print("Change hierarchy tree at run time using super")
+s=soon()
+s.m()
+soon.__bases__=(e2,)                #working n class attribute we can make what we want!!!!
+print("herarchy changed: ",end='')
+s.m()
 print('---------------------------------------------------------------------')
 
 print('---------------------------------------------------------------------')
