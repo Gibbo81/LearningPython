@@ -92,6 +92,22 @@ class e2:
 class soon(e1):
     def m(self): super().m()
 
+#test on super with diamond
+class DiamondTop:
+    def test(self):
+        print("Metodh test of DiamondTop class")
+
+class DiamondLeft(DiamondTop):
+    def test(self):
+        return super().test()
+
+class DiamondRight(DiamondTop):
+    def test(self):
+        print("Metodh test of DiamondRight class")
+
+class DiamondBase(DiamondLeft, DiamondRight):
+    def test(self):
+        return super().test()
 print('---------------------------------------------------------------------')
 a= SearchingTest(10)
 #a.__add__= lambda x: self.Data + x     #this is not working 
@@ -169,7 +185,9 @@ soon.__bases__=(e2,)                #working n class attribute we can make what 
 print("herarchy changed: ",end='')
 s.m()
 print('---------------------------------------------------------------------')
-
+d= DiamondBase()
+d.test()    #we print DiamondRight, it's important to note that super of DiamondLeft call DiamondRight
+            #because the hierarchy diagram it's calculated from the class DiamondBase 
 print('---------------------------------------------------------------------')
 
 print('---------------------------------------------------------------------')
