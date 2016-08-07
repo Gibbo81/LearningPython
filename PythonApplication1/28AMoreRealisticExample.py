@@ -8,9 +8,6 @@ def ReadFromShelve(path):
         print(reader[key])
     reader.close()
 
-
-
-
 print('********************************************')
 bob= person.Person('Bob Smith')
 print("bob.__class__: ", bob.__class__)
@@ -49,25 +46,12 @@ rw["Goofy"]=goofy
 rw.close()
 ReadFromShelve(".\\files28\\newshelvefile")
 print('********************************************')
-
 '''
 To minimize the chances of name collisions like this, Python programmers often prefix
 methods not meant for external use with a single underscore: _gatherAttrs in our case.
 This isn’t foolproof (what if another class defines _gatherAttrs, too?), but it’s usually
 sufficient, and it’s a common Python naming convention for methods internal to a class.
-A better and less commonly used solution would be to use two underscores at the front
-of the method name only: __gatherAttrs for us. Python automatically expands such
-names to include the enclosing class’s name, which makes them truly unique when
-looked up by the inheritance search.
+A better and less commonly used solution would be to use two underscores at the front of the 
+method name only: __attrs for us. Python automatically expands such names to include the enclosing 
+class’s name _C1__attr, which makes them truly unique when looked up by the inheritance search .
 '''
-
-
-
-
-
-
-
-
-
-
-
