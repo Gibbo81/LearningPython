@@ -58,7 +58,7 @@ class ReadAllIstanceAttribute():
 
 class ReadAllAttribute():
     def ReadAttribute(self):
-        return list(dir(self))              #we can read all the attribu include that of class and inheritance
+        return list(dir(self))              #we can read all the attributes include that of class and inheritance
     def Print(self):
         result=''
         for x in self.ReadAttribute():
@@ -135,8 +135,8 @@ object = BeautifulWriter.write  #unbound method to use it we still need an istan
 print(object)
 object(istance, "messaggio\n")
 '''
-If the function do not require a self istance def writeselfless(data):
-we can call it without passing an istance {NO SELF}
+If the function do not require a self instance def writeselfless(data):
+we can call it without passing an instance {NO SELF}
 '''
 objectselfless = BeautifulWriter.writeselfless
 objectselfless("messaggio\n")

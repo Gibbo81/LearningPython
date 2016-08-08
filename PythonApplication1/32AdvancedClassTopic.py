@@ -125,7 +125,7 @@ print('---------------------------------------------------------------------')
 print("Class c1 OLD search pattern (NO diamond) --> C1.__mro__: ", C1.__mro__)
 print('---------------------------------------------------------------------')
 print("Working with __slot__")
-print('It"s possible to force a clas to only have a subset of attribute by defining them into __slot__')
+print('It"s possible to force a class to only have a subset of attribute by defining them into __slot__')
 u1 = Slot()
 u2 = Slot()
 u1.name = "bob"
@@ -189,18 +189,3 @@ d= DiamondBase()
 d.test()    #we print DiamondRight, it's important to note that super of DiamondLeft call DiamondRight
             #because the hierarchy diagram it's calculated from the class DiamondBase 
 print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
