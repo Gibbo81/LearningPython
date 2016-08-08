@@ -14,7 +14,7 @@ class TextMulti__init__():
         self.b=valB
         print('First costructor')
 
-    def __init__(self, valA):           #this 2° constructor will hide the first one no costructor overload
+    def __init__(self, valA):           #this 2° constructor will hide the first one no function overload
         self.a=valA
         print('Second costructor')
 
@@ -33,11 +33,11 @@ def nester():
     g=2
     class Inside:
         g=3
-        print(g);           #3
+        print(g);           #print 3
         def nested(self):
             print(g)        #2! The lookup rules for simple names like X never search enclosing class
-                            #statements—just defs, modules, and built-ins (it’s the LEGB rule, not CLEGB!).
-            print(self.g)   #3 To read 3 i have to use self.g. Self is never explicit!!!!!
+                            #local, enclosing function, global(module) and built-ins (python) (it’s the LEGB rule, not CLEGB!).
+            print(self.g)   #3 To read 3 i have to use self.g. Self is never implicit!!!!!
     Inside().nested()   
 
 
