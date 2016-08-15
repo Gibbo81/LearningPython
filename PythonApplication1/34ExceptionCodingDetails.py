@@ -48,15 +48,46 @@ try:
         raise                   #re-raise the last reised exception
 except:
     print("Catch UnboundLocalError for the second time")
-
-
-
-
-
-
-
 print('---------------------------------------------------------------------')
+print("__cause__ is the equivalent of C# inner exception")
+try:
+    try:
+        raise UnboundLocalError("AAA")
+    except Exception as e:
+        print("Catch Exception")
+        raise PermissionError('BBB')  from e        #this  goes inside __cause__ field 
+except Exception as e:
+    print('External exception: %s' % e)
+    print('Internal exception __cause__: %s' % e.__cause__)
 
+print("Its' possible, but not so usefull to create both the exceptions at the same time")
+try:
+    raise UnboundLocalError("DDD") from AssertionError('CCC')
+except Exception as e:
+    print('External exception: %s' % e)
+    print('Internal exception __cause__: %s' % e.__cause__)
 print('---------------------------------------------------------------------')
-
+print('Assert: assert test, data')
+print('if the test evaluates to false, Python raises an exception: the data item ')
+try:
+    r=random.randint(1,100)
+    assert (r%2)!=0, "%s it's even" % r
+except Exception as e:
+    print(e)
+    print(e.__class__)      #raise use AssertionError class
+#assert statements are removed from a compiled program’s byte code if the -O Python command-line flag is used
+print('---------------------------------------------------------------------')
+print("With an alternative to try/finally")
+print("it allows a richer object-based protocol for specifying ENTRY and EXIT actions!")
+with open(r'.\\09files\\myfile.txt') as myfile:
+    for line in myfile:
+        print(line, end='')
+print('At the end of the with the file is automatically closed')
+print('---------------------------------------------------------------------')
+print('We can use with command with more than one expression at the same time')
+with open(r'.\\09files\\myfile.txt') as myfile1, open(r'.\\09files\\insertobjects.txt') as myfile2:
+    for line in myfile1:
+        print(line, end='')
+    for line in myfile2:
+        print(line, end='')
 print('---------------------------------------------------------------------')
