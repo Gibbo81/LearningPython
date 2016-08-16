@@ -75,7 +75,7 @@ try:
 except Exception as e:
     print(e)
     print(e.__class__)      #raise use AssertionError class
-#assert statements are removed from a compiled program’s byte code if the -O Python command-line flag is used
+#assert statements are removed from a compiled program's byte code if the -O Python command-line flag is used
 print('---------------------------------------------------------------------')
 print("With an alternative to try/finally")
 print("it allows a richer object-based protocol for specifying ENTRY and EXIT actions!")
