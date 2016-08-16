@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>34ExceptionCodingDetails.py</StartupFile>
+    <StartupFile>35ExceptionObject.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -118,6 +118,9 @@
     <Compile Include="34ExceptionCodingDetails.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="35ExceptionObject.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="files28\person.py" />
     <Compile Include="files29\specialize.py">
       <SubType>Code</SubType>
@@ -129,6 +132,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="files32\Set.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="files35\PersonalException.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="importing\Changer.py">
@@ -150,6 +156,7 @@
     <Folder Include="files29\" />
     <Folder Include="files31\" />
     <Folder Include="files32\" />
+    <Folder Include="files35\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="files28\newshelvefile.bak" />
