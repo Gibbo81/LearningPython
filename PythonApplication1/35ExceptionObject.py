@@ -19,8 +19,9 @@ print('Raise all the exception of the hierarchy')
 for x in (raise0, raise1, raise2):
     try:
         x()
-    except pe.GeneralException as e:                 #catches all the hierarchy of exception classes
-        print("caught %s" % sys.exc_info()[0])  #gives information about the most recent exception
+    except pe.GeneralException as e:             #catches all the hierarchy of exception classes
+        print("caught %s" % sys.exc_info()[0])   #gives information about the most recent exception
+                                                 #reaslly usefull with empty except where we cannot use as... 
         print("/*/*/*e.__class__: %s*/*/*/" % e.__class__)
 print('---------------------------------------------------------------------')
 
