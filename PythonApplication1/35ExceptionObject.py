@@ -10,19 +10,15 @@ def raise1():
 def raise2():
     raise pe.SpecificException2
 
-
-
-
-
 print('---------------------------------------------------------------------')
 print('Raise all the exception of the hierarchy')
 for x in (raise0, raise1, raise2):
     try:
         x()
-    except pe.GeneralException as e:             #catches all the hierarchy of exception classes
-        print("caught %s" % sys.exc_info()[0])   #gives information about the most recent exception
-                                                 #really usefull with empty except where we cannot use as... 
-        print("/*/*/*e.__class__: %s*/*/*/" % e.__class__)
+    except pe.GeneralException as e:                    #catches all the hierarchy of exception classes
+        print("caught type exception %s" % sys.exc_info()[0])   #gives information about the most recent exception (its type)
+        print("Exception instance: %s" % sys.exc_info()[1])     #give the real exception instance
+        print("/*/*/*e.__class__: %s*/*/*/" % e.__class__)#really usefull with empty except where we cannot use as... 
 print('---------------------------------------------------------------------')
 print("Default printing and state")
 ex = TimeoutError(1,2,3,'a','b','c')
@@ -38,20 +34,4 @@ print('It works also for personalized exception (no override)')
 ex = pe.SpecificException2(1,2,3,'a','b','c')
 print("pe.SpecificException2(1,2,3,'a','b','c').args: %s" % str(ex.args))
 print("pe.SpecificException2(1,2,3,'a','b','c'): %s" % ex)
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
 print('---------------------------------------------------------------------')
