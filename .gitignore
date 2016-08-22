@@ -5,6 +5,7 @@ obj/**
 publish_svc/**
 *.user
 *.suo
+*.pyc
 
 **/packages/*
 **/bin/*
