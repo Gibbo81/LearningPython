@@ -30,7 +30,7 @@ for x in bytes_:
 print('---------------------------------------------------------------------')
 x='XYZ'         #an Unicode string of ASCII text
 for c in x:
-    print("byte %s corrisponde al carattere %s" % (ord(c), c))
+    print("byte %s corrisponde al carattere %s" % (ord(c), c))  #ord to get a character cardinal
 print('---------------------------------------------------------------------')
 print('Coding non ASCII text')
 ab = [chr(0xc4),chr(0xe8)]             # 0x Unicode escape, usable only on a character 
@@ -80,6 +80,20 @@ B = bytes('abc',"ascii")    #constructor with string and encoding
 print("B: ",B) 
 B = bytes([101,97,113])
 print("B: ",B) 
+print('---------------------------------------------------------------------')
+print("Using bytarray (mutable bytes) :-)")
+ba = bytearray('viva la pappa',"latin1")
+print(ba)
+ba[1] = ord('u')
+print(ba)
+ba.extend(b' al pomodoro')
+print(ba)
+print("ba[4:12]: %s" % ba[4:12])
+print('---------------------------------------------------------------------')
+print("     A SAMPLE RECAP")
+print('Use str for textual data.')
+print('Use bytes for binary data.')
+print('Use bytearray for binary data you wish to change in place.')
 print('---------------------------------------------------------------------')
 
 print('---------------------------------------------------------------------')
