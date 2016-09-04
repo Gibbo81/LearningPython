@@ -163,11 +163,13 @@
     <Folder Include="files31\" />
     <Folder Include="files32\" />
     <Folder Include="files35\" />
+    <Folder Include="files37\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="files28\newshelvefile.bak" />
     <Content Include="files28\newshelvefile.dat" />
     <Content Include="files28\newshelvefile.dir" />
+    <Content Include="files37\Book.xml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -95,6 +95,20 @@ print('Use str for textual data.')
 print('Use bytes for binary data.')
 print('Use bytearray for binary data you wish to change in place.')
 print('---------------------------------------------------------------------')
+print("Reading an XML files")
+import xml.dom.minidom as mini
+
+xmltree = mini.parse('.\\files37\\Book.xml')
+for node1 in xmltree.getElementsByTagName("title"):
+    print([x.data for x in node1.childNodes if x.nodeType == mini.Node.TEXT_NODE])
+print('---------------------------------------------------------------------')
+xmltree = mini.parse('.\\files37\\Book.xml')
+for node1 in xmltree.getElementsByTagName("title"):
+    for y in node1.childNodes:
+        if y.nodeType == mini.Node.TEXT_NODE:
+            print(y.data)
+
+
 
 print('---------------------------------------------------------------------')
 
