@@ -18,14 +18,50 @@ class BasketPlayer(Person):
         return self._name
     name2 = property(getName, Person.setName, Person.delName, "Property docs")  
 
+class PropertyWithDecorator:
+    def __init__(self, name):
+        self._name = name
+    
+    @property
+    def name(self):             #this define the property and initialize the get method
+        print('fetch...')
+        return self._name
+    @name.setter                #define the set
+    def name(self, value):
+        print('change from %s to %s' % (self.name, value))
+        self._name = value
+    @name.deleter               #define the delete
+    def name(self): 
+        print('remove...')
+        del self._name
 
-    #@property
-    #def Name(self):
-    #    return self.name
+class Descriptor:
+    "name descriptor docs"                  #this is the property doc
+    def __get__(self, instance, owner):     #owner is the type(class) of instance
+        print(self, instance, owner, sep='\n')
+        return instance.value
+    def __set__(self, instance, value):
+        print('change from %s to %s' % (instance.value, value))
+        instance.value = value  
+    def __delete__(self, instance):
+        print('remove value ...')
+        del instance.value
+
+class Base():
+    def __init__(self, value):
+        self.value = value
+    attr = Descriptor()     #It's a class attribute but instance are automaically passed with each call
+  
+"""
+Also note that when a descriptor class is not useful outside the client class, it's 
+possible to embed the descriptor's definition inside its client syntactically (pag.1231)
+"""
+
+
 
 
 print('---------------------------------------------------------------------')
-print("Using propertie to acess data inside class")
+print("Using propertie to access data inside class")
 p = Person('Jack')
 print(Person.name.__doc__)
 print(p.name)
@@ -48,15 +84,25 @@ print('---------------------------------------------------------------------')
 Recall that the function decorator syntax:
 @decorator
 def func(args): ...
-is automatically translated to this equivalent by Python, to rebind the function name
-to the result of the decorator callable:
+is automatically translated to rebind the function name to the result of the decorator callable:
 def func(args): ...
 func = decorator(func)
 '''
-
-
+print("we can create the same class effect using the decorator @property")
+x=PropertyWithDecorator('Norma')
+print(x.name)                                  
+x.name="Minnis"
+print(x.name)
+del x.name
+#print(x.name)                # This would give back an error
 print('---------------------------------------------------------------------')
-
+print("Working with Description")
+print(Descriptor.__doc__)
+b= Base('Sonya')
+print(b.attr)
+b.attr="Blade"
+print(b.attr)
+del b.attr
 print('---------------------------------------------------------------------')
 
 print('---------------------------------------------------------------------')
