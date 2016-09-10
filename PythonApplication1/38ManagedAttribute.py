@@ -57,7 +57,11 @@ Also note that when a descriptor class is not useful outside the client class, i
 possible to embed the descriptor's definition inside its client syntactically (pag.1231)
 """
 
-
+class CatchAllUndefined():
+    def __init__(self, name):
+        self.name = name
+    def __getattr__(selv, attrname):            #catch all undefine attribute (all autside name)
+        return "Attribute %s it's not define" % attrname
 
 
 print('---------------------------------------------------------------------')
@@ -104,6 +108,12 @@ b.attr="Blade"
 print(b.attr)
 del b.attr
 print('---------------------------------------------------------------------')
+print('Working with __getattr__')
+c=CatchAllUndefined('Qua')
+print(c.name)       #all except this are catch by __getattr__
+print(c.surname)
+print(c.age)
+
 
 print('---------------------------------------------------------------------')
 
