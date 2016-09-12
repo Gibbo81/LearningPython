@@ -116,6 +116,15 @@ print(c.age)
 
 
 print('---------------------------------------------------------------------')
+'''
+getattr function is used to fetch an attribute from an object, using a string object instead of an 
+identifier to identify the attribute. In other words, the following two statements are equivalent:
+
+value = obj.attribute
+value = getattr(obj, "attribute")
+'''
+p = Person('Camilla')
+print(getattr(p, "_name"),"are the same", p._name)
 
 print('---------------------------------------------------------------------')
 
