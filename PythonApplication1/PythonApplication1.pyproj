@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b748a6f3-620d-4eec-875c-5cc699ea0b6b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>38ManagedAttribute.py</StartupFile>
+    <StartupFile>39Decorators.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -128,6 +128,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="38ManagedAttribute.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="39Decorators.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="files28\person.py" />
