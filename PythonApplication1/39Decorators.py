@@ -36,7 +36,7 @@ class Decorator:
 def func2(first, second):
     print("Orignal function 2 is called with parameter %s, %s" % (first, second))    
 
-def decorationFunctionClass(F):  
+def decorationFunctionOfAClass(F):  
     print('The decorator is created!')      #run after @decorationFunction
     def wrapper(*args):                     #args[0] is the istance of the class
         print('The decorator is called!')
@@ -47,12 +47,19 @@ def decorationFunctionClass(F):
     return wrapper 
 
 class ToDecorate():
-    @decorationFunctionClass 
+    @decorationFunctionOfAClass 
     def func(self, first, second):
         print("Orignal class function is called with parameter %s, %s" % (first, second))    
     def original(self):
         print('we can still call original istance method')
 
+"""
+@decorator 
+class C:
+...
+x = C(99) ==> C = decorator(C)
+
+"""
 print('---------------------------------------------------------------------')
 print('simple decorator using')
 func(1,3)
@@ -67,14 +74,3 @@ print('To decorate a class method we MUST use function and not class')
 x=ToDecorate()
 x.func(54,82)
 x.func(439,754)
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
-
-print('---------------------------------------------------------------------')
