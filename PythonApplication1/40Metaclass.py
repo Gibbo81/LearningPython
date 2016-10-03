@@ -30,12 +30,32 @@ class MetaWithMetod(type):
         def __new__(meta, classname, supers, classdict):    #called at the and of MetaSpam class statement
             print("Starting MetaWithMetod __new__")
             return type.__new__(meta, classname, supers, classdict)     
-        def read(self):
+        def read(cls):
             return 'read from metaclass MetaWithMetod'   
+        def x(cls):
+            print('x',cls)  #A is a metaclass itstance are classes (istances=classes)
 
 class Reading(metaclass=MetaWithMetod):
     def Re(self):
         return 'readingoriginal class'
+
+#this metaclass defines a method that as en effect on the class creating istance x
+class AT(type):
+    def aMeta(cls):
+        cls.x = cls.y + cls.z 
+    def __getitem__(cls,i):
+        return cls.data[i]
+
+class BT(metaclass=AT):
+    y,z = 10,21
+    data='spamming'
+    @classmethod
+    def bClass(cls):
+        return cls.x
+    def __init__(self, one, two):
+       self.__class__.y = one               #to change a class variable from an istance
+       self.__class__.z = two
+
 
 print('---------------------------------------------------------------------')
 '''
@@ -90,9 +110,19 @@ print('C.__class__ :',C.__class__)
 print('C.__class__.attr : ',C.__class__.attr)
 
 print('---------------------------------------------------------------------')
-
+print('To look up an explicit attribute name:')
+print('From an instance I, search the instance, then its class, and then all its superclasses')
+print('From a class C, search the class, then all its superclasses, and then its metaclasses tree')
 print('---------------------------------------------------------------------')
-
+print("DEfine a metaclass that change the class")
+ist=BT(100,500)
+#ist.aMeta()  #istance cann't see this method, is usable only by the class
+BT.aMeta()  #this create attribute x
+print('After the creatin of x we can use it from normal istance')
+print('ist.x: ',ist.x)
+print('BT.x: ',BT.x)
+print('ist.bClass(): ', ist.bClass())
+print("BT[5]: ",BT[5])
 print('---------------------------------------------------------------------')
 
 print('---------------------------------------------------------------------')
