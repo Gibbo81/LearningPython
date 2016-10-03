@@ -6,7 +6,7 @@ class Spam(Eggs):
     def meth(self, arg):
         return self.data + arg
 
-class Meta(type):                #meta are normal class that derives from tipe
+class Meta(type):                #meta are normal class that derives from type
     def __new__(meta, classname, supers, classdict):    #called at the and of MetaSpam class statement
         print("Starting metaclass __new__")
         return type.__new__(meta, classname, supers, classdict)        
@@ -26,6 +26,16 @@ class MetaSpam(Eggs, metaclass=Meta):   #this time we define a different metacla
     def meth(self, arg):
         return self.data + arg
 
+class MetaWithMetod(type):
+        def __new__(meta, classname, supers, classdict):    #called at the and of MetaSpam class statement
+            print("Starting MetaWithMetod __new__")
+            return type.__new__(meta, classname, supers, classdict)     
+        def read(self):
+            return 'read from metaclass MetaWithMetod'   
+
+class Reading(metaclass=MetaWithMetod):
+    def Re(self):
+        return 'readingoriginal class'
 
 print('---------------------------------------------------------------------')
 '''
@@ -51,12 +61,33 @@ a = type('Spam', (), {'data': 1, 'meth': (lambda x, y: x.data + y)})    #--> a =
 print(a.data)
 print(a.meth(a,9))      #a.meth(45) wouldn't working
 print('---------------------------------------------------------------------')
+"""Creation with standard metaclass"""
 ms= MetaSpam(4)
 ms= MetaSpam(8)
 
 print('---------------------------------------------------------------------')
+'''metaclass attributes are made available to their instance classes, but not to instances of 
+those instance classes'''
+r = Reading()
+print('r.Re() :',r.Re())
+#print('r.read() :',r.read())   
+#this method will raise an error because istance of reading do not take method from MetaWithMetod
+print('Reading.Re(r) :',Reading.Re(r))
+print('Reading.read() ) :',Reading.read())  #Methods acquired from metaclasses are bound to the subject class
 
 print('---------------------------------------------------------------------')
+"""classes acquire metaclass attributes through their __class__ link, in the same way that normal 
+instances inherit from classes through their __class__, which makes sense, given that classes are 
+also instances of metaclasses"""
+class M(type): attr = 1
+class A: attr = 2
+class B(A): pass
+class C(B, metaclass=M): pass 
+I = C()
+print('I.__class__ :',I.__class__ )
+print('C.__bases__ :',C.__bases__)
+print('C.__class__ :',C.__class__)
+print('C.__class__.attr : ',C.__class__.attr)
 
 print('---------------------------------------------------------------------')
 
