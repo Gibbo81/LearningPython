@@ -1,3 +1,5 @@
+import types
+
 class C: pass
 
 class Eggs:pass
@@ -56,6 +58,13 @@ class BT(metaclass=AT):
        self.__class__.y = one               #to change a class variable from an istance
        self.__class__.z = two
 
+def fourfunc(obj):
+    return obj.value * 4
+def hamfunc(obj, value):
+    return str(value) + 'ham'
+
+def sometests():
+    return 1
 
 print('---------------------------------------------------------------------')
 '''
@@ -124,8 +133,54 @@ print('BT.x: ',BT.x)
 print('ist.bClass(): ', ist.bClass())
 print("BT[5]: ",BT[5])
 print('---------------------------------------------------------------------')
+print("Adding method using a metaclass")
 
+class meta(type):
+    def __new__(meta, classname, supers, classdict):
+        if sometests():                     #we can add in a run time dinamically
+            classdict['four']=fourfunc      #all class build in this way will have this two method
+            classdict['ham']=hamfunc
+        return type.__new__(meta, classname, supers, classdict)   
+
+class client(metaclass=meta):
+    def __init__(self, value):
+        self.value=value
+
+c = client('10')
+print("c.four(): ",c.four())            #we can call them as normal method!!!!!!! relly beatiful
+print("c.ham(2): ",c.ham(2))
 print('---------------------------------------------------------------------')
+print("We can use both metaclass and decorator at the same time")
+print("With metaclass we can add decorator to all method of a class atrun time")
+
+def decorator(func):
+    def OnCall(*args,**kwargs):
+        print('Run the decorators!!!')
+        return func(*args,**kwargs)
+    return OnCall
+
+def decorateALL(dec):        #we can create the decorator class in a dinamyc way using a decorator passed a run time 
+    class MetaTrace(type):
+        def __new__(meta, classname, supers, classdict):
+            for attr, attrval in classdict.items():
+                if type(attrval) is types.FunctionType:       # Method?
+                    classdict[attr] = dec(attrval)   # Decorate it
+            return type.__new__(meta, classname, supers, classdict)
+    return MetaTrace
+
+class Person(metaclass=decorateALL(decorator)):     #in this way e can chose a run time wich decorator to use
+    def __init__(self, A, B):
+        self.A=A
+        self.B=B
+        print("Constructor")
+    def Func1(self):
+        print("func1")
+    def Func2(self):
+        print(self.A, self.B)
+
+p=Person('one',"two")
+p.Func1()
+p.Func2()
 
 print('---------------------------------------------------------------------')
 

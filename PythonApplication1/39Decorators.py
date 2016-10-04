@@ -60,6 +60,25 @@ class C:
 x = C(99) ==> C = decorator(C)
 
 """
+
+def eggsfunc(obj):
+    return obj.value * 4
+def hamfunc(obj, value):
+    return value + 'ham'
+
+def Extender(aClass):
+    aClass.eggs = eggsfunc # Manages class, not instance
+    aClass.ham = hamfunc # Equiv to metaclass __init__
+    return aClass
+
+@Extender
+class Client1: # Client1 = Extender(Client1)
+    def __init__(self, value): # Rebound at end of class stmt
+        self.value = value
+    def spam(self):
+        return self.value * 2
+
+
 print('---------------------------------------------------------------------')
 print('simple decorator using')
 func(1,3)
@@ -74,3 +93,10 @@ print('To decorate a class method we MUST use function and not class')
 x=ToDecorate()
 x.func(54,82)
 x.func(439,754)
+print('---------------------------------------------------------------------')
+print("We can use decorator to add methods to istance after istance creation!")
+c=Client1('10')
+print('X.spam(): ',c.spam())
+print('X.eggs(): ',c.eggs())
+print("X.ham('bacon'): ", c.ham('bacon'))
+print('---------------------------------------------------------------------')
