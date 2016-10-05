@@ -5,7 +5,7 @@ def F(arg):     ==>     F = decorator(F)
 This automatic name rebinding works on any def statementn When the function F is later 
 called, it's actually calling the object returned by the decorator,
 """
-
+import types
 
 def decorationFunction(F):  
     print('The decorator is created!')      #run after @decorationFunction
@@ -99,4 +99,35 @@ c=Client1('10')
 print('X.spam(): ',c.spam())
 print('X.eggs(): ',c.eggs())
 print("X.ham('bacon'): ", c.ham('bacon'))
+print('---------------------------------------------------------------------')
+print("we can use a function to create a class decorator in a dinamic way")
+def decoratorf(func):
+    def OnCall(*args,**kwargs):
+        print('Run the decorators!!!')
+        return func(*args,**kwargs)
+    return OnCall
+
+def decorateAll(decorator):
+    def DecoDecorate(aClass):
+        for attr, attrval in aClass.__dict__.items():
+            if type(attrval) is types.FunctionType:
+                setattr(aClass, attr, decorator(attrval)) 
+        return aClass       #return the class not an isance
+    return DecoDecorate     #return the method not an istance
+
+@decorateAll(decoratorf)     # Use a class decorator, the one returned from method decorateAll(...)
+class Person:               # Applies func decorator to methods
+    def __init__(self, name, pay): # Person = decorateAll(..)(Person)
+        self.name = name            # Person = DecoDecorate(Person)
+        self.pay = pay
+    def giveRaise(self, percent):
+        self.pay *= (1.0 + percent)
+    def lastName(self):
+        return self.name.split()[-1]
+
+p = Person ("ann", 1000)
+print("p.lastName() :", p.lastName())
+p.giveRaise (10)
+print('---------------------------------------------------------------------')
+
 print('---------------------------------------------------------------------')

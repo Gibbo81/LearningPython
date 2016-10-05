@@ -166,7 +166,7 @@ def decorateALL(dec):        #we can create the decorator class in a dinamyc way
                 if type(attrval) is types.FunctionType:       # Method?
                     classdict[attr] = dec(attrval)   # Decorate it
             return type.__new__(meta, classname, supers, classdict)
-    return MetaTrace
+    return MetaTrace        #return the class not anistance!!!!
 
 class Person(metaclass=decorateALL(decorator)):     #in this way e can chose a run time wich decorator to use
     def __init__(self, A, B):
@@ -179,6 +179,7 @@ class Person(metaclass=decorateALL(decorator)):     #in this way e can chose a r
         print(self.A, self.B)
 
 p=Person('one',"two")
+p2=Person('one',"two")
 p.Func1()
 p.Func2()
 
