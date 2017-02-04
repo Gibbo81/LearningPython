@@ -26,7 +26,7 @@ except IndexError as e:
 print('continuing')
 print('---------------------------------------------------------------------')
 try:
-    raise IndexError
+    raise IndexError("Manually raised")
 except IndexError as e: 
     print("Error raised: %s" % e)
 print('---------------------------------------------------------------------')

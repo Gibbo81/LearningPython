@@ -25,7 +25,7 @@ try:
     if ((i%3)==0):
         raise UnboundLocalError
 except Exception:       #catch all the exception with the esclusion of those related to system exit
-    print("catch all the exception with the esclusion of those related to system exit")
+    print("catch all the exception with the exclusion of those related to system exit")
 except SystemExit:
     print('Catch system exit')
 print('---------------------------------------------------------------------')

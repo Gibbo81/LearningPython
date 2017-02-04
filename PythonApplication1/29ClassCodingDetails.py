@@ -63,4 +63,6 @@ nester()
 print('--------------------------------------------------------------')
 x.added=10
 print("dir(x) :",dir(x))                                #see also attributes taken from the class
+print('*************************************************')
 print("x.__dict__.keys(): ",list(x.__dict__.keys()))    #see only istance attribute
+print("ConcreteDerivate.__dict__.keys(): ",list(ConcreteDerivate.__dict__.keys())) 
