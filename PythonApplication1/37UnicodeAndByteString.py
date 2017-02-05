@@ -6,6 +6,8 @@ print("S.encode('latin1'): %s" % S.encode('latin1'))
 print("S.encode('utf8'): %s" % S.encode('utf8'))
 print("S.encode('utf16'): %s" % S.encode('utf16'))
 print("S.encode('utf32'): %s" % S.encode('utf32'))
+str = 'yyul'.encode('utf8')
+str2 = 'yyul'.encode('utf32')
 print('---------------------------------------------------------------------')
 """
 In memory, Python always stores decoded text strings in an encoding-neutral format, which may 

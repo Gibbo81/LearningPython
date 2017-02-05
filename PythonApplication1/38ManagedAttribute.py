@@ -60,7 +60,7 @@ possible to embed the descriptor's definition inside its client syntactically (p
 class CatchAllUndefined():
     def __init__(self, name):
         self.name = name
-    def __getattr__(selv, attrname):            #catch all undefine attribute (all autside name)
+    def __getattr__(self, attrname):            #catch all undefine attribute (all autside name)
         return "Attribute %s it's not define" % attrname
 
 

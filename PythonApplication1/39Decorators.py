@@ -42,7 +42,7 @@ def decorationFunctionOfAClass(F):
         print('The decorator is called!')
         print("first parameter: %s" % args[1])
         print("second parameter: %s" % args[2])
-        args[0].original()                  #we can use it as a normalistance
+        args[0].original()                  #we can use it as a normal instance
         F(*args)                            #Call the original calling function
     return wrapper 
 
