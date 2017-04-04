@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ProgrammingPython", "ProgrammingPython\ProgrammingPython.pyproj", "{8F2CD3B1-0BCB-403C-A12A-FCDEB5D68694}"
+EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "LearningPython", "LearningPython\LearningPython.pyproj", "{B748A6F3-620D-4EEC-875C-5CC699EA0B6B}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "RabbitMQTests", "RabbitMQTests\RabbitMQTests.pyproj", "{D3D349BC-2583-4FAE-BF5A-F050965BC5AE}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ProgrammingPython", "ProgrammingPython\ProgrammingPython.pyproj", "{8F2CD3B1-0BCB-403C-A12A-FCDEB5D68694}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

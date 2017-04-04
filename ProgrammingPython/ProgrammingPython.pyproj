@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8f2cd3b1-0bcb-403c-a12a-fcdeb5d68694</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ProgrammingPython.py</StartupFile>
+    <StartupFile>C01ASneakPreview.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ProgrammingPython.py" />
+    <Compile Include="C01ASneakPreview.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
