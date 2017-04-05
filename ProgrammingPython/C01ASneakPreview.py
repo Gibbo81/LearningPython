@@ -1,4 +1,4 @@
-
+import InitialData as ID
 
 bob = ['bob smith', 42, 30000,'software']
 sue = ['sue Jones', 52, 50000,'hardware']
@@ -25,3 +25,5 @@ peoples = [bob, sue]
 x= bob['name'], sue['age']  #tuple
 
 print('------------------------------------------------------------')
+
+print(ID.db)
