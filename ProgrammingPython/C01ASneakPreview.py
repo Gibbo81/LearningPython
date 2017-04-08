@@ -1,29 +1,72 @@
 import InitialData as ID
+import pickle
+import os
+import glob
+import shelve
 
-bob = ['bob smith', 42, 30000,'software']
-sue = ['sue Jones', 52, 50000,'hardware']
+def PersistDBOnFile(filename, object):
+    with open(filename, 'wb') as dbfile:
+        pickle.dump(object, dbfile)
 
-peoples = [bob, sue]
-peoples.append(['tom boldo', 25, 31000,'farmer'])
+def ReadDbFromPersistingFile(filename):
+    with open(filename, 'rb') as openf:
+        return pickle.load(openf)
 
+def SaveInFolder(foldername, object):
+    if not os.path.exists(foldername):
+        os.makedirs(foldername)
+    for key in object:
+        PersistDBOnFile('recordfolder\\' + key + '.pkl', object[key])
 
-print(peoples[0][0].split()[-1])
-peoples[1][2] *= 1.25
+def ReadAllPklFiles(folder): 
+    for filename in glob.glob(folder + '\*.pkl'):
+        c = ReadDbFromPersistingFile(filename)
+        print(c)
 
-for x in peoples:
-    print(x)
+def SaveWithShelve(filesname, object):
+    with shelve.open(filesname) as db:
+        for key in object:
+            db[key] = object[key]
 
-#To 0obtain all the pays:
-pays = [x[2] for x in peoples]
-pays2 = map(lambda x : x[2] , peoples)
-print(list(pays2))
-print(pays)
-
-bob = {'name': 'bob smith', 'age':42, 'pay': 3000, 'job': 'software'}
-sue = {'name': 'sue Jones', 'age':52, 'pay': 5000, 'job': 'hardware'}
-peoples = [bob, sue]
-x= bob['name'], sue['age']  #tuple
 
 print('------------------------------------------------------------')
 
-print(ID.db)
+db = ID.GiveDb()
+PersistDBOnFile('people', db)
+db= None
+db = ReadDbFromPersistingFile('people')
+db['sue']["pay"] = db['sue']["pay"] * 1.2
+db['red']["name"] = 'red Yellow'
+PersistDBOnFile('people', db)
+print(ReadDbFromPersistingFile('people'))
+
+print('------------------------------------------------------------')
+
+print("Save each record on it's own file")
+folder = 'recordfolder'
+SaveInFolder(folder,ID.GiveDb())
+
+print("Read all the records")
+ReadAllPklFiles('recordfolder')
+
+print("change sue's record")
+sue = ReadDbFromPersistingFile('recordfolder\sue.pkl')
+sue['age']=30
+PersistDBOnFile('recordfolder\sue.pkl',sue)
+
+ReadAllPklFiles('recordfolder')
+print('------------------------------------------------------------')
+
+print("Save eusing shalve")
+
+SaveWithShelve('pepleshelve', ID.GiveDb())
+
+with shelve.open('pepleshelve') as sf:
+    red = sf['red']
+    red['pay']=89
+    sf['red'] = red     #we always need to change the hightest level inside shelve db
+    listr = [value for value in  sf.values()]
+    dictr = {key:sf[key] for key in sf.keys()}
+    
+print('list: %s' % listr)
+print('dict: %s' % dictr)
