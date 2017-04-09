@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8f2cd3b1-0bcb-403c-a12a-fcdeb5d68694</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>C01ASneakPreview.py</StartupFile>
+    <StartupFile>Chapter01\C01ASneakPreview.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,10 +22,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="C01ASneakPreview.py" />
-    <Compile Include="InitialData.py">
+    <Compile Include="Chapter01\C01ASneakPreview.py" />
+    <Compile Include="Chapter01\InitialData.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter01\Manager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chapter01\Person.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Chapter01\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

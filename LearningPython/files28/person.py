@@ -22,7 +22,7 @@ class Person:
 class Manager(Person):
     def __init__(self, name, pay = 0):
         Person.__init__(self, name, 'Boss', pay)
-        #super().__init__(name, 'Boss', pay)  #It's the same with super but we do not chose wich super class call
+        #super().__init__(name, 'Boss', pay)  #It's the same with super but we do not chose which super class call
         #It's better not to use it (use explicit base class call) because it can create or hide some serious problem
         #when we will introduce multiple inheritance
 

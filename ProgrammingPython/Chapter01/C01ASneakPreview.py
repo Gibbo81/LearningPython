@@ -58,7 +58,6 @@ ReadAllPklFiles('recordfolder')
 print('------------------------------------------------------------')
 
 print("Save eusing shalve")
-
 SaveWithShelve('pepleshelve', ID.GiveDb())
 
 with shelve.open('pepleshelve') as sf:
@@ -70,3 +69,16 @@ with shelve.open('pepleshelve') as sf:
     
 print('list: %s' % listr)
 print('dict: %s' % dictr)
+print('------------------------------------------------------------')
+
+print('Using class to rappresent records')
+from Person import PersonRecord
+from Manager import Manager
+
+p1 = PersonRecord("Bob jr.", 23, 23000, "Doc");
+p2 = PersonRecord("Martin jr.", 57, 36000, "King");
+p3 = Manager("Rich sr.", 57, 36000);
+records = [p1, p2, p3]
+print(p1)
+print(p3)
+
