@@ -57,10 +57,10 @@ PersistDBOnFile('recordfolder\sue.pkl',sue)
 ReadAllPklFiles('recordfolder')
 print('------------------------------------------------------------')
 
-print("Save eusing shalve")
-SaveWithShelve('pepleshelve', ID.GiveDb())
+print("Save using shalve")
+SaveWithShelve('peopleshelve', ID.GiveDb())
 
-with shelve.open('pepleshelve') as sf:
+with shelve.open('peopleshelve') as sf:
     red = sf['red']
     red['pay']=89
     sf['red'] = red     #we always need to change the hightest level inside shelve db
@@ -115,8 +115,6 @@ with shelve.open('ClassShelve') as dbf:
                 print(f, ':' , getattr(record,f))
 
 print('Stop reading data')
-
-
 
 
 

@@ -188,3 +188,6 @@ SortingDictionary()
 print('------------------------------------------------------------')
 DictionaryIn()
 print('------------------------------------------------------------')
+fieldnames = ('name', 'age', 'job', 'pay')
+for [ix, label] in enumerate(('pippo',) + fieldnames):
+    print( ix, ' --- ', label)

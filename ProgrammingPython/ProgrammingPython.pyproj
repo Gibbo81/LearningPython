@@ -23,7 +23,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Chapter01\C01ASneakPreview.py" />
-    <Compile Include="Chapter01\Guid.py">
+    <Compile Include="Chapter01\Guid\Guid_FirstTry.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chapter01\Guid\UsingMyGuidClass.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Chapter01\InitialData.py">
@@ -32,12 +35,16 @@
     <Compile Include="Chapter01\Manager.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Chapter01\Guid\MyGuiClass.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Chapter01\Person.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chapter01\" />
+    <Folder Include="Chapter01\Guid\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
